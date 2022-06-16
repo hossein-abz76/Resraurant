@@ -4,7 +4,7 @@
 }
 
 :root {
-    --main-color: #27ae60;
+    --main-color: #EE5A24;
     --second-color: #130f40;
     --third-color: #f7f7f7;
 }
@@ -32,6 +32,9 @@ html {
     overflow-x: hidden;
     scroll-padding-top: 8.5rem;
     scroll-behavior: smooth;
+}
+.dark{
+    background-color: var(--second-color) !important;
 }
 
 html::-webkit-scrollbar {
@@ -81,6 +84,9 @@ section {
 .btn:hover {
     background: var(--second-color);
 }
+.dark .btn:hover {
+    background: #211b4ed8;
+}
 
 .header {
     position: -webkit-sticky;
@@ -103,12 +109,23 @@ section {
     justify-content: space-between;
     padding: 2rem 9%;
 }
+.dark .header{
+    background: #211b4ed8;
+    -webkit-box-shadow: 0 1rem 1rem rgba(5, 31, 68, 0.877);
+    box-shadow: 0 1rem 1rem rgba(5, 31, 68, 0.877);
+}
 
 .header .logo {
     font-size: 2.5rem;
     font-weight: bolder;
     color: var(--second-color);
 }
+.dark .header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--third-color);
+}
+
 
 .header .logo i {
     padding-right: .5rem;
@@ -119,6 +136,10 @@ section {
     font-size: 1.7rem;
     margin: 0 1rem;
     color: #666;
+}
+.dark .header .navbar a {
+    
+    color: var(--third-color);
 }
 
 .header .navbar a:hover {
@@ -208,16 +229,6 @@ input:checked+.slider:before {
         opacity: 0;
     }
 }
-
-@keyframes fadeUp {
-    0% {
-        -webkit-transform: translateY(5rem);
-        transform: translateY(5rem);
-        opacity: 0;
-    }
-}
-
-
 
 .search-form-container {
     position: fixed;
@@ -516,13 +527,16 @@ input:checked+.slider:before {
 
 .home .content span {
     font-size: 2rem;
-    color: #27ae60;
+    color: var(--main-color);
 }
 
 .home .content h3 {
     font-size: 4rem;
-    color: #130f40;
+    color: var(--second-color);
     padding-top: 1rem;
+}
+.dark .home .content h3 {
+    color: var(--third-color);
 }
 
 .home .content p {
@@ -530,6 +544,9 @@ input:checked+.slider:before {
     color: #666;
     line-height: 2;
     padding: 1rem 0;
+}
+.dark .home .content p {
+    color: rgb(197, 196, 196);
 }
 
 .home .image {

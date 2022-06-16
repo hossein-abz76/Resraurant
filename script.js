@@ -66,3 +66,26 @@ $.querySelector(".home").onmouseleave = () => {
     ".home .home-parallax-img2"
   ).style.transform = `translateX(0px) translateY(0px)`;
 };
+
+
+// dark mode
+
+let switchBtn = $.querySelector('.switch input')
+switchBtn.addEventListener('click',function changeTheme() {
+    $.body.classList.toggle('dark')
+    
+    if ($.body.className.includes('dark')) {
+        localStorage.setItem('theme','dark')
+    } else {
+        localStorage.setItem('theme','light')
+        
+    }
+    
+})
+
+window.onload = function () {
+    let localStorageTheme = localStorage.getItem('theme')
+    if (localStorageTheme === 'dark') {
+        $.body.classList.add('dark')
+    }
+}
