@@ -34,21 +34,35 @@ menuBtn.onclick = () => {
   navbar.classList.toggle("active");
 };
 
-window.onscroll = () =>{
-    navbar.classList.remove('active');
-}
+window.onkeydown = (e) => {
+  if (e.code === "Escape") {
+    searchForm.classList.remove("active");
+    cartForm.classList.remove("active");
+    loginForm.classList.remove("active");
+    navbar.classList.remove("active");
+  }
+};
+window.onscroll = () => {
+  navbar.classList.remove("active");
+};
 
-$.querySelector('.home').onmousemove = (e) =>{
+$.querySelector(".home").onmousemove = (e) => {
+  let x = (window.innerWidth - e.pageX * 2) / 90;
+  let y = (window.innerHeight - e.pageY * 2) / 90;
 
-    let x = (window.innerWidth - e.pageX * 2) / 90;
-    let y = (window.innerHeight - e.pageY * 2) / 90;
+  $.querySelector(
+    ".home .home-parallax-img"
+  ).style.transform = `translateX(${y}px) translateY(${x}px)`;
+  $.querySelector(
+    ".home .home-parallax-img2"
+  ).style.transform = `translateX(${y}px) translateY(${x}px)`;
+};
 
-    $.querySelector('.home .home-parallax-img').style.transform = `translateX(${y}px) translateY(${x}px)`;
-    $.querySelector('.home .home-parallax-img2').style.transform = `translateX(${y}px) translateY(${x}px)`;
-}
-
-$.querySelector('.home').onmouseleave = () =>{
-
-    $.querySelector('.home .home-parallax-img').style.transform = `translateX(0px) translateY(0px)`;
-    $.querySelector('.home .home-parallax-img2').style.transform = `translateX(0px) translateY(0px)`;
-}  
+$.querySelector(".home").onmouseleave = () => {
+  $.querySelector(
+    ".home .home-parallax-img"
+  ).style.transform = `translateX(0px) translateY(0px)`;
+  $.querySelector(
+    ".home .home-parallax-img2"
+  ).style.transform = `translateX(0px) translateY(0px)`;
+};

@@ -130,7 +130,7 @@ section {
     width: 4.5rem;
     line-height: 4.5rem;
     font-size: 2rem;
-    background: #f7f7f7;
+    background: var(--third-color);
     color: var(--second-color);
     border-radius: .5rem;
     margin-left: .3rem;
@@ -326,7 +326,7 @@ input:checked+.slider:before {
 
 .shopping-cart-container .products-container .box-container .box {
     border-radius: .5rem;
-    background: #f7f7f7;
+    background: var(--third-color);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
