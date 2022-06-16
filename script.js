@@ -1,16 +1,23 @@
 let $ = document;
 
-let searchForm = $.querySelector(".search-form-container");
 let searchBtn = $.querySelector("#search-btn");
+let cartBtn = $.querySelector("#cart-btn");
+let loginBtn = $.querySelector("#login-btn");
+let searchForm = $.querySelector(".search-form-container");
 let cartForm = $.querySelector(".shopping-cart-container");
 let loginForm = $.querySelector(".login-form-container");
 let navbar = document.querySelector(".header .navbar");
 
 searchBtn.onclick = () => {
   searchForm.classList.toggle("active");
-//   cartForm.classList.remove("active");
+  cartForm.classList.remove("active");
 //   loginForm.classList.remove("active");
 //   navbar.classList.remove("active");
-  console.log('click');
+};
+cartBtn.onclick = () => {
+  searchForm.classList.remove("active");
+  cartForm.classList.toggle("active");
+//   loginForm.classList.remove("active");
+//   navbar.classList.remove("active");
 };
 
