@@ -1,0 +1,75 @@
+@font-face {
+    font-family: iransans-font;
+    src: url('font/IRANSans.ttf');
+}
+
+body {
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: iransans-font;
+    color: var(--second-color);
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+
+/* switch theme control */
+
+.switch {
+    /* --moon-mask: ; */
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    margin-top: 2px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background: linear-gradient(40deg, #edfc1a, #ff8c00 90%);
+    ;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #303136;
+}
+
+input:checked+.slider:before {
+    transform: translateX(1.5em);
+    background: #303136;
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -5px 0 0 #a3dafb;
+}
