@@ -599,6 +599,7 @@ input:checked+.slider:before {
     gap: 2rem;
     position: relative;
     overflow: hidden;
+    margin-bottom: 10rem;
 }
 
 .home .content {
@@ -643,19 +644,19 @@ input:checked+.slider:before {
 
 .home .image .home-img {
     width: 55rem;
-    margin-top: 5rem;
+    margin-top: 10rem;
 }
 
 .home .home-parallax-img {
     position: absolute;
-    top: 6rem;
+    top: 7rem;
     right: 110rem;
-    width: 23vw;
+    width: 26vw;
 }
 
 .home .home-parallax-img2 {
     position: absolute;
-    top: -10rem;
+    top: -5rem;
     right: 52rem;
     width: 25vw;
     z-index: -1;
