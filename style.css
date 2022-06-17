@@ -606,6 +606,7 @@ input:checked+.slider:before {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 41rem;
     flex: 1 1 41rem;
+    position: relative;
 }
 
 .home .content span {
@@ -1361,6 +1362,10 @@ input:checked+.slider:before {
 /* media query started */
 
 @media (max-width: 1195px) {
+    .count-down{
+        display: none;
+        visibility: hidden;
+    }
     .home .image .home-img {
         width: 68rem;
         margin-top: -11rem;
@@ -1557,3 +1562,46 @@ input:checked+.slider:before {
 }
 
 /* scrollTop section ended */
+
+
+/* countDown section started */
+
+
+.count-down{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    height: 80px;
+    background-color: var(--main-color);
+    border-radius: 10px 10px 15px 15px;
+    position: absolute;
+    right: 400px;
+    top: 225px;
+    overflow: hidden;
+}
+.count-down h2{
+    background-color: var(--other-color);
+    color: var(--third-color);
+    clip-path: circle(50% at 50% 50%);
+    height: 75px;
+    width: 100px;
+    z-index: 200;
+    text-align: center;
+    line-height: 35px;
+}
+.count-down .box h3{
+    font-size: 15px;
+    background-color: var(--second-color);
+    width: 30px;
+    height: 30px;
+    line-height: 15px;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.count-down .box p{
+    color: var(--third-color);
+}
+/* countDown section ended */

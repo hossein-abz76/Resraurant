@@ -115,3 +115,36 @@ $.addEventListener("scroll", function () {
 });
 
 /* scrollTop section ended */
+
+
+/* countDown section started */
+
+let countDate = new Date('jun 30 , 2022 00:00:00').getTime()
+
+function countDown() {
+    let now = new Date().getTime()
+    gap = countDate - now
+
+    let second = 1000
+    let minutes = second * 60
+    let hour = minutes * 60
+    let day = hour * 24
+
+    let d = Math.floor(gap / day)
+    let h = Math.floor((gap % day) / hour)
+    let m = Math.floor((gap % hour) / minutes)
+    let s = Math.floor((gap % minutes) / second)
+
+    document.getElementById('days').innerText = d
+    document.getElementById('hours').innerText = h
+    document.getElementById('minutes').innerText = m
+    document.getElementById('second').innerText = s
+    
+}
+
+setInterval(function () {
+    countDown()
+},1000)
+
+
+/* countDown section ended */
