@@ -1364,6 +1364,7 @@ input:checked+.slider:before {
         width: 68rem;
         margin-top: -11rem;
     }
+
     .home .home-parallax-img {
         top: -4rem;
         right: 63rem;
@@ -1396,6 +1397,7 @@ input:checked+.slider:before {
         #menu-btn {
             display: inline-block;
         }
+
         .banner .row-banner .content p {
             color: var(--third-color);
         }
@@ -1411,6 +1413,7 @@ input:checked+.slider:before {
             -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
             clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         }
+
         .dark .header .navbar {
             background: var(--second-color);
             border-top: 0.1rem solid var(--main-color);
@@ -1431,7 +1434,8 @@ input:checked+.slider:before {
         }
 
         .home .home-parallax-img,
-        .home-parallax-img2,.image .home-img {
+        .home-parallax-img2,
+        .image .home-img {
             display: none;
         }
 
@@ -1444,9 +1448,11 @@ input:checked+.slider:before {
         html {
             font-size: 50%;
         }
+
         .banner .row-banner .content h3 {
             display: none;
         }
+
         .banner .row-banner .content p {
             background-color: var(--second-color);
             border-radius: 10px 0 0 50px;
@@ -1455,7 +1461,8 @@ input:checked+.slider:before {
         }
 
         .home .home-parallax-img,
-        .home-parallax-img2,.image .home-img {
+        .home-parallax-img2,
+        .image .home-img {
             display: none;
         }
 
@@ -1478,3 +1485,74 @@ input:checked+.slider:before {
 }
 
 /* media query ended */
+
+/* scrollTop section started */
+
+.circle {
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    top: 86.5vh;
+    left: 1vw;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border: 5px solid var(--second-color);
+    border-radius: 50%;
+    background: linear-gradient(to bottom, var(--main-color) 0%, transparent 0%);
+
+}
+
+.dark .circle {
+    border: 5px solid var(--third-color);
+}
+
+.circle.visible {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.circle .btn {
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+    border-radius: 50%;
+    background-color: var(--second-color);
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    left: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dark .circle .btn {
+    background-color: var(--third-color);
+}
+
+.circle .btn .fa-chevron-up {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    color: var(--third-color);
+}
+
+.dark .circle .btn .fa-chevron-up {
+    color: var(--second-color);
+}
+
+.circle:hover .btn,
+.circle:hover {
+    filter: brightness(85%);
+}
+
+/* scrollTop section ended */

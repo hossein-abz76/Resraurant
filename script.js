@@ -86,3 +86,32 @@ window.onload = function () {
     $.body.classList.add("dark");
   }
 };
+
+/* scrollTop section started */
+
+let goUpBtn = $.querySelector("#go-up");
+let circle = $.querySelector(".circle");
+
+window.addEventListener("scroll", function () {
+  let scrollTop = window.scrollY;
+  let documentHeight = document.body.clientHeight;
+  let windowHeight = window.innerHeight;
+  let scrollPercent = scrollTop / (documentHeight - windowHeight);
+  let scrollPercentRounded = Math.round(scrollPercent * 100);
+  circle.style.background = `linear-gradient(to bottom,var(--main-color) ${scrollPercentRounded}%,transparent 0%)`;
+  console.log(scrollPercentRounded);
+});
+
+goUpBtn.addEventListener("click", function scrollTopHandler() {
+  window.scrollTo(0, 0);
+});
+
+$.addEventListener("scroll", function () {
+  if ($.documentElement.scrollTop > 0) {
+    circle.classList.add("visible");
+  } else {
+    circle.classList.remove("visible");
+  }
+});
+
+/* scrollTop section ended */
