@@ -240,6 +240,11 @@ input:checked+.slider:before {
     z-index: 1000;
     display: none;
 }
+.dark .search-form-container {
+    
+    background: var(--second-color);
+    
+}
 
 .search-form-container.active {
     display: block;
@@ -258,6 +263,10 @@ input:checked+.slider:before {
     -webkit-animation: fadeUp .4s linear;
     animation: fadeUp .4s linear;
 }
+.dark .search-form-container form {
+    border-bottom: 0.2rem solid var(--main-color);
+    
+}
 
 .search-form-container form input {
     height: 100%;
@@ -267,11 +276,23 @@ input:checked+.slider:before {
     text-transform: none;
     padding-right: 1rem;
 }
+.dark .search-form-container form input {
+    background-color: var(--second-color);
+    color: var(--third-color);
+
+}
+.dark .search-form-container form input::placeholder {
+    color: var(--third-color);
+    
+}
 
 .search-form-container form label {
     font-size: 3rem;
     cursor: pointer;
     color: var(--second-color);
+}
+.dark .search-form-container form label {
+    color: var(--main-color);
 }
 
 .search-form-container form label:hover {
@@ -292,6 +313,9 @@ input:checked+.slider:before {
     overflow-y: scroll;
     padding-bottom: 8rem;
     display: none;
+}
+.dark .shopping-cart-container {
+    background-color: var(--second-color);
 }
 
 .shopping-cart-container.active {
@@ -318,12 +342,21 @@ input:checked+.slider:before {
     border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+.dark .shopping-cart-container .title {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--third-color);
+
+    
+}
 
 .shopping-cart-container .products-container {
     border: 0.1rem solid rgba(0, 0, 0, 0.2);
     border-radius: .5rem;
     -webkit-animation: fadeUp .4s linear;
     animation: fadeUp .4s linear;
+}
+.dark .shopping-cart-container .products-container {
+    border: 0.1rem solid var(--third-color);
 }
 
 .shopping-cart-container .products-container .box-container {
@@ -347,6 +380,10 @@ input:checked+.slider:before {
     gap: 1.5rem;
     padding: 2rem;
     position: relative;
+}
+.dark .shopping-cart-container .products-container .box-container .box {
+    background: var(--third-color);
+    
 }
 
 .shopping-cart-container .products-container .box-container .box .fa-times {
@@ -396,6 +433,9 @@ input:checked+.slider:before {
     -webkit-animation: fadeUp .4s linear .4s backwards;
     animation: fadeUp .4s linear .4s backwards;
 }
+.dark .shopping-cart-container .cart-total {
+    border: 0.1rem solid var(--third-color);
+}
 
 .shopping-cart-container .cart-total .box {
     padding: 1.5rem;
@@ -405,6 +445,9 @@ input:checked+.slider:before {
     color: var(--second-color);
     font-size: 2rem;
     padding-bottom: .7rem;
+}
+.dark .shopping-cart-container .cart-total .box h3 {
+    color: var(--third-color);
 }
 
 .shopping-cart-container .cart-total .box h3 span {
@@ -427,6 +470,9 @@ input:checked+.slider:before {
     padding: 0 2rem;
     display: none;
 }
+.dark .login-form-container {
+    background: var(--second-color);
+}
 
 .login-form-container.active {
     display: block;
@@ -443,12 +489,21 @@ input:checked+.slider:before {
     -webkit-animation: fadeUp .4s linear;
     animation: fadeUp .4s linear;
 }
+.dark .login-form-container form {
+    -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+    border: 0.1rem solid var(--third-color);
+    
+}
 
 .login-form-container form h3 {
     padding-bottom: 1rem;
     font-size: 2.5rem;
     text-transform: uppercase;
     color: var(--second-color);
+}
+.dark .login-form-container form h3 {
+    color: var(--main-color);
 }
 
 .login-form-container form .box {
@@ -478,6 +533,9 @@ input:checked+.slider:before {
     cursor: pointer;
     color: #666;
 }
+.dark .login-form-container form .remember label {
+    color: var(--third-color);
+}
 
 .login-form-container form .btn {
     margin: 1rem 0;
@@ -489,6 +547,9 @@ input:checked+.slider:before {
     padding-top: 1rem;
     font-size: 1.5rem;
     color: #666;
+}
+.dark .login-form-container form p {
+    color: var(--third-color);
 }
 
 .login-form-container form p a {
