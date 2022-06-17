@@ -99,7 +99,6 @@ window.addEventListener("scroll", function () {
   let scrollPercent = scrollTop / (documentHeight - windowHeight);
   let scrollPercentRounded = Math.round(scrollPercent * 100);
   circle.style.background = `linear-gradient(to bottom,var(--main-color) ${scrollPercentRounded}%,transparent 0%)`;
-  console.log(scrollPercentRounded);
 });
 
 goUpBtn.addEventListener("click", function scrollTopHandler() {
