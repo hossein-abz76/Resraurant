@@ -1,5 +1,12 @@
 let $ = document;
 
+// loader section started
+
+const loaderElem = document.querySelector('.loader-container')
+
+
+// loader section ended
+
 let searchBtn = $.querySelector("#search-btn");
 let cartBtn = $.querySelector("#cart-btn");
 let loginBtn = $.querySelector("#login-btn");
@@ -81,6 +88,7 @@ switchBtn.addEventListener("click", function changeTheme() {
 });
 
 window.onload = function () {
+  loaderElem.classList.add('hidden')
   let localStorageTheme = localStorage.getItem("theme");
   if (localStorageTheme === "dark") {
     $.body.classList.add("dark");
