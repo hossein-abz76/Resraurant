@@ -1032,7 +1032,7 @@ input:checked+.slider:before {
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
-    
+
 }
 
 .order .icons-container .icons {
@@ -1057,6 +1057,7 @@ input:checked+.slider:before {
     padding: 2rem;
     border-radius: .5rem;
 }
+
 .dark .order form {
     background: var(--other-color);
     padding: 2rem;
@@ -1083,6 +1084,7 @@ input:checked+.slider:before {
     font-size: 1.7rem;
     color: #666;
 }
+
 .dark .order form .flex span {
     font-size: 1.7rem;
     color: var(--third-color);
@@ -1112,3 +1114,97 @@ input:checked+.slider:before {
 }
 
 /* order section ended  */
+
+
+/* blogs section started  */
+
+.blogs .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.blogs .box-container .box {
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.blogs .box-container .box:hover .image h3 {
+    left: 1.5rem;
+}
+
+.blogs .box-container .box:hover .image img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.blogs .box-container .box .image {
+    position: relative;
+    height: 25rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.blogs .box-container .box .image h3 {
+    position: absolute;
+    z-index: 10;
+    top: 1rem;
+    left: -100%;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    background: #fff;
+    color: var(--second-color);
+    font-size: 1.5rem;
+}
+
+.blogs .box-container .box .image h3 i {
+    padding-right: .5rem;
+    color: var(--main-color);
+}
+
+.blogs .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.blogs .box-container .box .content {
+    padding: 2rem 1.5rem;
+    background: var(--third-color);
+}
+
+.blogs .box-container .box .content .tags {
+    padding-bottom: 1rem;
+}
+
+.blogs .box-container .box .content .tags a {
+    font-size: 1.5rem;
+    color: #666;
+    padding-right: .5rem;
+}
+
+.blogs .box-container .box .content .tags a:hover {
+    color: var(--main-color);
+}
+
+.blogs .box-container .box .content .tags a i {
+    color: var(--main-color);
+    padding-right: .5rem;
+}
+
+.blogs .box-container .box .content h3 {
+    font-size: 2rem;
+    color: var(--second-color);
+}
+
+.blogs .box-container .box .content p {
+    font-size: 1.4rem;
+    color: #666;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+/* blogs section ended  */
