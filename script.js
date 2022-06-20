@@ -4,7 +4,6 @@ let $ = document;
 
 const loaderElem = document.querySelector('.loader-container')
 
-
 // loader section ended
 
 let searchBtn = $.querySelector("#search-btn");
@@ -87,13 +86,13 @@ switchBtn.addEventListener("click", function changeTheme() {
   }
 });
 
-window.onload = function () {
-  loaderElem.classList.add('hidden')
-  let localStorageTheme = localStorage.getItem("theme");
-  if (localStorageTheme === "dark") {
-    $.body.classList.add("dark");
-  }
-};
+// window.onload = function () {
+//   loaderElem.classList.add('hidden')
+//   let localStorageTheme = localStorage.getItem("theme");
+//   if (localStorageTheme === "dark") {
+//     $.body.classList.add("dark");
+//   }
+// };
 
 /* scrollTop section started */
 
@@ -123,35 +122,62 @@ $.addEventListener("scroll", function () {
 
 /* scrollTop section ended */
 
-
 /* countDown section started */
 
-let countDate = new Date('jun 30 , 2022 00:00:00').getTime()
+let countDate = new Date("jun 30 , 2022 00:00:00").getTime();
 
 function countDown() {
-    let now = new Date().getTime()
-    gap = countDate - now
+  let now = new Date().getTime();
+  gap = countDate - now;
 
-    let second = 1000
-    let minutes = second * 60
-    let hour = minutes * 60
-    let day = hour * 24
+  let second = 1000;
+  let minutes = second * 60;
+  let hour = minutes * 60;
+  let day = hour * 24;
 
-    let d = Math.floor(gap / day)
-    let h = Math.floor((gap % day) / hour)
-    let m = Math.floor((gap % hour) / minutes)
-    let s = Math.floor((gap % minutes) / second)
+  let d = Math.floor(gap / day);
+  let h = Math.floor((gap % day) / hour);
+  let m = Math.floor((gap % hour) / minutes);
+  let s = Math.floor((gap % minutes) / second);
 
-    document.getElementById('days').innerText = d
-    document.getElementById('hours').innerText = h
-    document.getElementById('minutes').innerText = m
-    document.getElementById('second').innerText = s
-    
+  document.getElementById("days").innerText = d;
+  document.getElementById("hours").innerText = h;
+  document.getElementById("minutes").innerText = m;
+  document.getElementById("second").innerText = s;
 }
 
 setInterval(function () {
-    countDown()
-},1000)
-
+  countDown();
+}, 1000);
 
 /* countDown section ended */
+
+/* add/remove alert section started */
+let alertContainer = $.querySelector(".alert-container");
+let testBtn = $.querySelector(".test-btn");
+
+testBtn.addEventListener("click", function () {
+  console.log("object");
+  addAlertHandler();
+  // removeAlertHandler();
+});
+
+function addAlertHandler() {
+  alertContainer.insertAdjacentHTML(
+    "beforeend",
+    `<div class="added-alert"><span>سفارش شما با موفقیت به سبد خرید اضافه شد.</span></div>`
+  );
+  setTimeout(function () {
+    $.querySelector(".added-alert").classList.add("hidden");
+  }, 2000);
+}
+function removeAlertHandler() {
+  alertContainer.insertAdjacentHTML(
+    "beforeend",
+    `<div class="removed-alert"><span>سفارش شما با موفقیت از سبد خرید پاک شد.</span></div>`
+  );
+  setTimeout(function () {
+    $.querySelector(".removed-alert").classList.add("hidden");
+  }, 2000);
+}
+/* add/remove alert section ended */
