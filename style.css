@@ -302,11 +302,11 @@ section {
     transition: .4s;
 }
 
-input:checked+.slider {
+.dark .slider {
     background-color: #303136;
 }
 
-input:checked+.slider:before {
+.dark .slider:before {
     transform: translateX(1.5em);
     background: #303136;
     box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -5px 0 0 #a3dafb;

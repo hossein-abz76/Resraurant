@@ -86,13 +86,7 @@ switchBtn.addEventListener("click", function changeTheme() {
   }
 });
 
-// window.onload = function () {
-//   loaderElem.classList.add('hidden')
-//   let localStorageTheme = localStorage.getItem("theme");
-//   if (localStorageTheme === "dark") {
-//     $.body.classList.add("dark");
-//   }
-// };
+
 
 /* scrollTop section started */
 
@@ -154,13 +148,6 @@ setInterval(function () {
 
 /* add/remove alert section started */
 let alertContainer = $.querySelector(".alert-container");
-let testBtn = $.querySelector(".test-btn");
-
-testBtn.addEventListener("click", function () {
-  console.log("object");
-  addAlertHandler();
-  // removeAlertHandler();
-});
 
 function addAlertHandler() {
   alertContainer.insertAdjacentHTML(
@@ -181,3 +168,199 @@ function removeAlertHandler() {
   }, 2000);
 }
 /* add/remove alert section ended */
+
+/* popular section started */
+
+let popularContainer = $.getElementById('popular-container')
+
+let foodArray = [
+  {id : 1, title: 'گیوزا ژاپنی', price: '235000',oldPrice: '250000', count: 1,star: 5, favorite: true, cat: 'launch', img: 'img/food-1.png'},
+  {id : 2, title: 'برگر قارچ و پنیر', price: '110000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'burger', img: 'img/food-2.png'},
+  {id : 3, title: 'پیتزا ایتالیایی', price: '100000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'pizza', img: 'img/food-3.png'},
+  {id : 4, title: 'همبرگر سیاه', price: '110000',oldPrice: '130000', count: 1,star: 5, favorite: true, cat: 'burger', img: 'img/food-4.png'},
+  {id : 5, title: 'پیتزا ریحان', price: '125000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'pizza', img: 'img/food-5.png'},
+  {id : 6, title: 'پیتزا سبزیجات', price: '90000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'pizza', img: 'img/food-6.png'},
+  {id : 7, title: 'دوبل برگر', price: '75000',oldPrice: '', count: 1,star: 5, favorite: true, cat: 'launch', img: 'img/food-7.png'},
+  {id : 8, title: 'پیتزا مخلوط', price: '95000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'burger', img: 'img/food-8.png'},
+  {id : 9, title: 'برگر مرغ', price: '85000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'burger', img: 'img/menu-1.png'},
+  {id : 10, title: 'پیتزا بروکلی', price: '135000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'burger', img: 'img/menu-2.png'},
+  {id : 11, title: 'اسنک پنیری', price: '55000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'pizza', img: 'img/menu-3.png'},
+  {id : 12, title: 'ساندویچ سرد', price: '75000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'launch', img: 'img/menu-4.png'},
+  {id : 13, title: 'سیب زمینی سرخ کرده', price: '45000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'dinner', img: 'img/menu-5.png'},
+  {id : 14, title: 'پیتزا ویژه', price: '155000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'pizza', img: 'img/menu-6.png'},
+  
+]
+let isFavorite = foodArray.filter(function (food) {
+  return food.favorite === true
+})
+isFavorite.forEach(function (food) {
+  popularContainer.insertAdjacentHTML('beforeend',`<div class="box">
+  <a href="#" class="fas fa-external-link-alt"></a>
+  <div class="image">
+    <img src="${food.img}" alt="${food.title}" />
+  </div>
+  <div class="content">
+    <h3>${food.title}</h3>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <span> ${food.star} </span>
+    </div>
+    <div class="price">${food.price} تومان <span>${food.oldPrice}</span></div>
+    <a href="#" class="btn" onclick="addFoodToUserBasket(${food.id})">افزودن به سبد</a>
+  </div>
+</div>`)
+
+})
+
+
+/* popular section ended */
+
+
+
+/* menu section started */
+
+let menuContainer = $.getElementById('menu-container')
+let isMenu = foodArray.filter(function (food) {
+  return food.favorite === false
+})
+isMenu.forEach(function (food) {
+  menuContainer.insertAdjacentHTML('beforeend',`<a href="#" class="box" onclick="addFoodToUserBasket(${food.id})">
+  <img src="${food.img}" alt="${food.title}" />
+  <div class="content">
+    <h3>${food.title}</h3>
+    <div class="price">${food.price} تومان </div>
+  </div>
+</a>`)
+})
+
+/* menu section ended */
+
+let userBasket = []
+
+function addFoodToUserBasket(foodId) {
+  let mainFood = foodArray.find(function (food) {
+    return food.id === foodId
+  })
+
+  userBasket.push(mainFood)
+  basketFoodGenerator(userBasket)
+  setIntoLocalStorage(userBasket)
+  calTotalPrice(userBasket)
+
+
+}
+
+
+function setIntoLocalStorage(items) {
+  localStorage.setItem('foods',JSON.stringify(items))
+} 
+
+function getFromLocalStorage() {
+  let localStorageFoods = localStorage.getItem('foods')
+
+  if (localStorageFoods) {
+    userBasket = JSON.parse(localStorageFoods)
+    basketFoodGenerator(userBasket)
+  }
+  
+}
+
+let cartContainer = $.getElementById('cart-container')
+
+function basketFoodGenerator(userBasket) {
+  cartContainer.innerHTML = ''
+  userBasket.forEach(function (food) {
+    
+    cartContainer.insertAdjacentHTML("beforeend",`<div class="box">
+    <i class="fas fa-times"></i>
+    <img src="${food.img}" alt="${food.title}" />
+    <div class="content">
+      <h3>${food.title}</h3>
+      <span> تعداد : </span>
+      <input type="number" name="" value="1" id="" />
+      <br />
+      <span> قیمت : </span>
+      <span class="price"> ${food.price}تومان </span>
+    </div>
+  </div>`)
+  })
+}
+
+
+/* totalPrice section started */
+
+let totalPrice = $.getElementById('total-price')
+let beforeDiscount = $.getElementById('before-ِdiscount')   
+let discount = $.querySelector('.discount-price')
+
+function calTotalPrice(userBasket) {
+  
+  let beforeDiscountValue = 0
+  let discountValue = 0  
+  let totalPriceValue = 0
+  let totalOldPrice = 0
+  let totalWithoutOldPrice = 0
+
+  userBasket.forEach(function (food) {
+    totalPriceValue += food.count * food.price
+    if (food.oldPrice == '') {
+      food.oldPrice = 0
+    }
+    totalOldPrice += food.count * food.oldPrice
+    
+  })
+
+  let withoutOldPrice = userBasket.filter(function (food) {
+    return food.oldPrice == ''
+  })
+  withoutOldPrice.forEach(function (food) {
+    totalWithoutOldPrice += food.count * food.price
+    
+  })
+  beforeDiscountValue = totalWithoutOldPrice + totalOldPrice
+  discountValue = beforeDiscountValue - totalPriceValue
+  
+  totalPrice.innerHTML = totalPriceValue + ' تومان'
+  beforeDiscount.innerHTML = beforeDiscountValue + ' تومان'
+  discount.innerHTML = discountValue + ' تومان'
+
+  setIntoLocalStorageTotalPrice(beforeDiscountValue,discountValue,totalPriceValue)
+}
+
+function setIntoLocalStorageTotalPrice(item1,item2,item3) {
+  localStorage.setItem('beforeDiscount',item1)
+  localStorage.setItem('discount',item2)
+  localStorage.setItem('totalPrice',item3)
+} 
+
+function getFromLocalStorageTotalPrice() {
+  let localStorageTotalBeforeDiscountPrice = localStorage.getItem('beforeDiscount')
+  let localStorageTotalDiscountPrice = localStorage.getItem('discount')
+  let localStorageTotalPrice = localStorage.getItem('totalPrice')
+
+  if (localStorageTotalBeforeDiscountPrice) {
+    beforeDiscount.innerHTML = localStorageTotalBeforeDiscountPrice + ' تومان'
+  }
+  if (localStorageTotalDiscountPrice) {
+    discount.innerHTML = localStorageTotalDiscountPrice + ' تومان'
+  }
+  if (localStorageTotalPrice) {
+    totalPrice.innerHTML = localStorageTotalPrice + ' تومان'
+  }
+}
+
+window.onload = function () {
+  getFromLocalStorage()
+  getFromLocalStorageTotalPrice()
+  // loaderElem.classList.add('hidden')
+  let localStorageTheme = localStorage.getItem("theme");
+  if (localStorageTheme === "dark") {
+    $.body.classList.add("dark");
+  }
+};
+
+/* totalPrice section ended */

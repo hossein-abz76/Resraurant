@@ -29,7 +29,6 @@
 
     <header class="header">
       <a href="#" class="logo"> <i class="fas fa-pizza-slice"></i> خوشمزه </a>
-      <div class="test"><button class="test-btn">test btn</button></div>
 
       <nav class="navbar">
         <a href="#home">خانه</a>
@@ -75,71 +74,8 @@
       <div class="products-container">
         <h3 class="title">غذاهای شما</h3>
 
-        <div class="box-container">
-          <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="img/menu-1.png" alt="" />
-            <div class="content">
-              <h3>delicious food</h3>
-              <span> تعداد : </span>
-              <input type="number" name="" value="1" id="" />
-              <br />
-              <span> قیمت : </span>
-              <span class="price"> $40.00 </span>
-            </div>
-          </div>
-
-          <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="img/menu-2.png" alt="" />
-            <div class="content">
-              <h3>delicious food</h3>
-              <span> تعداد : </span>
-              <input type="number" name="" value="1" id="" />
-              <br />
-              <span> قیمت : </span>
-              <span class="price"> $40.00 </span>
-            </div>
-          </div>
-
-          <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="img/menu-3.png" alt="" />
-            <div class="content">
-              <h3>delicious food</h3>
-              <span> تعداد : </span>
-              <input type="number" name="" value="1" id="" />
-              <br />
-              <span> قیمت : </span>
-              <span class="price"> $40.00 </span>
-            </div>
-          </div>
-
-          <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="img/menu-4.png" alt="" />
-            <div class="content">
-              <h3>delicious food</h3>
-              <span> تعداد : </span>
-              <input type="number" name="" value="1" id="" />
-              <br />
-              <span> قیمت : </span>
-              <span class="price"> $40.00 </span>
-            </div>
-          </div>
-
-          <div class="box">
-            <i class="fas fa-times"></i>
-            <img src="img/menu-5.png" alt="" />
-            <div class="content">
-              <h3>delicious food</h3>
-              <span> تعداد : </span>
-              <input type="number" name="" value="1" id="" />
-              <br />
-              <span> قیمت : </span>
-              <span class="price"> $40.00 </span>
-            </div>
-          </div>
+        <div class="box-container" id="cart-container">
+          
         </div>
       </div>
 
@@ -147,9 +83,9 @@
         <h3 class="title">مجموع خرید</h3>
 
         <div class="box">
-          <h3 class="subtotal">جمع قبل از کسر تخفیف : <span>$200</span></h3>
-          <h3 class="subtotal">تخفیف : <span>$50</span></h3>
-          <h3 class="total">جمع کل : <span>$150</span></h3>
+          <h3 class="subtotal">جمع قبل از کسر تخفیف : <span id="before-ِdiscount">0 تومان</span></h3>
+          <h3 class="subtotal">تخفیف : <span class="discount-price" id="ِdiscount-price">0 تومان</span></h3>
+          <h3 class="total">جمع کل : <span id="total-price">0 تومان</span></h3>
 
           <a href="#" class="btn">پرداخت</a>
         </div>
@@ -320,166 +256,8 @@
         <h3>منوی ویژه</h3>
       </div>
 
-      <div class="box-container">
-        <div class="box">
-          <a href="#" class="fas fa-external-link-alt"></a>
-          <div class="image">
-            <img src="img/food-1.png" alt="" />
-          </div>
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span> (50) </span>
-            </div>
-            <div class="price">$40.00 <span>$50.00</span></div>
-            <a href="#" class="btn">add to cart</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <a href="#" class="fas fa-external-link-alt"></a>
-          <div class="image">
-            <img src="img/food-2.png" alt="" />
-          </div>
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span> (50) </span>
-            </div>
-            <div class="price">$40.00 <span>$50.00</span></div>
-            <a href="#" class="btn">add to cart</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <a href="#" class="fas fa-external-link-alt"></a>
-          <div class="image">
-            <img src="img/food-3.png" alt="" />
-          </div>
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span> (50) </span>
-            </div>
-            <div class="price">$40.00 <span>$50.00</span></div>
-            <a href="#" class="btn">add to cart</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <a href="#" class="fas fa-external-link-alt"></a>
-          <div class="image">
-            <img src="img/food-4.png" alt="" />
-          </div>
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span> (50) </span>
-            </div>
-            <div class="price">$40.00 <span>$50.00</span></div>
-            <a href="#" class="btn">add to cart</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <a href="#" class="fas fa-external-link-alt"></a>
-          <div class="image">
-            <img src="img/food-5.png" alt="" />
-          </div>
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span> (50) </span>
-            </div>
-            <div class="price">$40.00 <span>$50.00</span></div>
-            <a href="#" class="btn">add to cart</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <a href="#" class="fas fa-external-link-alt"></a>
-          <div class="image">
-            <img src="img/food-6.png" alt="" />
-          </div>
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span> (50) </span>
-            </div>
-            <div class="price">$40.00 <span>$50.00</span></div>
-            <a href="#" class="btn">add to cart</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <a href="#" class="fas fa-external-link-alt"></a>
-          <div class="image">
-            <img src="img/food-7.png" alt="" />
-          </div>
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span> (50) </span>
-            </div>
-            <div class="price">$40.00 <span>$50.00</span></div>
-            <a href="#" class="btn">add to cart</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <a href="#" class="fas fa-external-link-alt"></a>
-          <div class="image">
-            <img src="img/food-8.png" alt="" />
-          </div>
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span> (50) </span>
-            </div>
-            <div class="price">$40.00 <span>$50.00</span></div>
-            <a href="#" class="btn">add to cart</a>
-          </div>
-        </div>
+      <div class="box-container" id="popular-container">
+        
       </div>
     </section>
 
@@ -535,54 +313,8 @@
         <h3>منوی پیشنهادی</h3>
       </div>
 
-      <div class="box-container">
-        <a href="#" class="box">
-          <img src="img/menu-1.png" alt="" />
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="price">$40.00</div>
-          </div>
-        </a>
-
-        <a href="#" class="box">
-          <img src="img/menu-2.png" alt="" />
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="price">$40.00</div>
-          </div>
-        </a>
-
-        <a href="#" class="box">
-          <img src="img/menu-3.png" alt="" />
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="price">$40.00</div>
-          </div>
-        </a>
-
-        <a href="#" class="box">
-          <img src="img/menu-4.png" alt="" />
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="price">$40.00</div>
-          </div>
-        </a>
-
-        <a href="#" class="box">
-          <img src="img/menu-5.png" alt="" />
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="price">$40.00</div>
-          </div>
-        </a>
-
-        <a href="#" class="box">
-          <img src="img/menu-6.png" alt="" />
-          <div class="content">
-            <h3>delicious food</h3>
-            <div class="price">$40.00</div>
-          </div>
-        </a>
+      <div class="box-container" id="menu-container">
+        
       </div>
     </section>
 
@@ -622,7 +354,7 @@
               type="text"
               placeholder="نام و نام خانوادگی خود را وارد کنید."
               name=""
-              id=""
+              id="name-order"
             />
           </div>
           <div class="inputBox">
@@ -631,7 +363,7 @@
               type="number"
               placeholder="شماره خود را وارد کنید."
               name=""
-              id=""
+              id="phone-order"
             />
           </div>
         </div>
@@ -643,7 +375,7 @@
               type="text"
               placeholder="نام غذای خود را وارد کنید."
               name=""
-              id=""
+              id="type-order"
             />
           </div>
           <div class="inputBox">
@@ -652,7 +384,7 @@
               type="number"
               placeholder="تعداد سفارش خود را وارد کنید."
               name=""
-              id=""
+              id="count-order"
             />
           </div>
         </div>
@@ -664,7 +396,7 @@
               type="text"
               placeholder="اگر پیغامی دارید در این قسمت وارد کنید."
               name=""
-              id=""
+              id="detail-order"
             />
           </div>
           <div class="inputBox">
@@ -677,7 +409,7 @@
           <div class="inputBox">
             <textarea
               placeholder="آدرس شما"
-              id=""
+              id="address-order"
               cols="30"
               rows="10"
             ></textarea>
