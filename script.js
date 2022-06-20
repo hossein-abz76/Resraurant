@@ -14,6 +14,7 @@ let searchForm = $.querySelector(".search-form-container");
 let cartForm = $.querySelector(".shopping-cart-container");
 let loginForm = $.querySelector(".login-form-container");
 let navbar = $.querySelector(".header .navbar");
+let paymentBtn = $.querySelector("#payment-btn");
 
 searchBtn.onclick = () => {
   searchForm.classList.toggle("active");
@@ -275,20 +276,23 @@ function basketFoodGenerator(userBasket) {
   cartContainer.innerHTML = ''
   userBasket.forEach(function (food) {
     
-    cartContainer.insertAdjacentHTML("beforeend",`<div class="box">
-    <i class="fas fa-times"></i>
+    cartContainer.insertAdjacentHTML("beforeend", `<div class="box">
+    <i class="fas fa-times" onclick="removeFoodFromCart(${food.id})"></i>
     <img src="${food.img}" alt="${food.title}" />
-    <div class="content">
+    <div class="content" id='content'>
       <h3>${food.title}</h3>
       <span> تعداد : </span>
-      <input type="number" name="" value="1" id="" />
+      <input type="number" name="" value="${food.count}" id="unique${food.id}" onchange="updateFoodCount(${food.id}, event.target.value)"/>
       <br />
       <span> قیمت : </span>
-      <span class="price"> ${food.price}تومان </span>
+      <span class="price"> ${food.price * food.count} تومان </span>
     </div>
   </div>`)
+  
+
   })
 }
+
 
 
 /* totalPrice section started */
@@ -351,6 +355,39 @@ function getFromLocalStorageTotalPrice() {
   if (localStorageTotalPrice) {
     totalPrice.innerHTML = localStorageTotalPrice + ' تومان'
   }
+}
+
+paymentBtn.onclick = () => {
+  userBasket = []
+  basketFoodGenerator(userBasket)
+  calTotalPrice(userBasket)
+  localStorage.removeItem('foods')
+  localStorage.removeItem('beforeDiscount')
+  localStorage.removeItem('discount')
+  localStorage.removeItem('totalPrice')
+}
+
+function removeFoodFromCart(foodId) {
+  userBasket = userBasket.filter(function (food) {
+    food.count = 1
+    return food.id != foodId
+  })
+  basketFoodGenerator(userBasket)
+  setIntoLocalStorage(userBasket)
+  calTotalPrice(userBasket)
+}
+
+function updateFoodCount(foodId, newCount) {
+
+  userBasket.forEach(function (food) {
+    if (food.id === foodId) {
+      food.count = newCount
+    }
+  })
+
+  basketFoodGenerator(userBasket)
+  setIntoLocalStorage(userBasket)
+  calTotalPrice(userBasket)
 }
 
 window.onload = function () {
