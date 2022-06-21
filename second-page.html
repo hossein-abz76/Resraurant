@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/products.css" />
+    <script
+      src="https://kit.fontawesome.com/f11c579d68.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <title>خوشمزه</title>
+</head>
+<body>
+     <!-- loader section started -->
+
+    <!-- <div class="loader-container">
+      <div class="loader"></div>
+    </div> -->
+
+    <!-- loader section ended -->
+
+    <!-- alert section started -->
+    <div class="alert-container"></div>
+    <!-- alert section ended -->
+
+    <!-- header section started -->
+
+    <header class="header">
+      <a href="#" class="logo"> <i class="fas fa-pizza-slice"></i> خوشمزه </a>
+
+      <nav class="navbar">
+        <a href="#home">خانه</a>
+        <a href="#about">درباره ما</a>
+        <a href="#popular">محبوب ترینها</a>
+        <a href="#menu">فهرست غذا</a>
+        <a href="#order">سفارش</a>
+        <a href="#blogs">وبلاگ</a>
+      </nav>
+
+      <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn" class="fas fa-search"></div>
+        <div id="cart-btn" class="fas fa-shopping-cart"></div>
+        <div id="login-btn" class="fas fa-user"></div>
+        <label class="switch"
+          ><input type="checkbox" /><span class="slider"></span
+        ></label>
+      </div>
+    </header>
+
+    <!-- header section ended -->
+
+    <!-- search form started -->
+
+    <section class="search-form-container">
+      <form action="">
+        <input
+          type="search"
+          name=""
+          placeholder="دنبال چی می گردی؟"
+          id="search-box"
+        />
+        <label for="search-box" class="fas fa-search"></label>
+      </form>
+    </section>
+
+    <!-- search form ended -->
+
+    <!-- shopping-cart section started -->
+
+    <section class="shopping-cart-container">
+      <div class="products-container">
+        <h3 class="title">غذاهای شما</h3>
+
+        <div class="box-container" id="cart-container">
+          
+        </div>
+      </div>
+
+      <div class="cart-total" >
+        <h3 class="title">مجموع خرید</h3>
+
+        <div class="box">
+          <h3 class="subtotal">جمع قبل از کسر تخفیف : <span id="before-ِdiscount">0 تومان</span></h3>
+          <h3 class="subtotal">تخفیف : <span class="discount-price" id="ِdiscount-price">0 تومان</span></h3>
+          <h3 class="total">جمع کل : <span id="total-price">0 تومان</span></h3>
+
+          <a href="#" class="btn" id="payment-btn">پرداخت</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- shopping-cart section ended -->
+
+    <!-- login-form section started -->
+
+    <div class="login-form-container">
+      <form action="">
+        <h3>صفحه ورود</h3>
+        <input
+          type="email"
+          name=""
+          placeholder="ایمیل خودتو را وارد کن..."
+          id="form-email"
+          class="box"
+        />
+        <input
+          type="password"
+          name=""
+          placeholder="رمز عبور خودتو را وارد کن..."
+          id="form-password"
+          class="box"
+        />
+        <div class="remember">
+          <input type="checkbox" name="" id="remember-me" />
+          <label for="remember-me"
+            >اینو بزن تا دفعه بعد نخای از اول بنویسی</label
+          >
+        </div>
+        <input type="submit" value="وارد شو" class="btn" />
+        <p>رمزتو فراموش کردی؟ <a href="#">اینجارو کلیک کن</a></p>
+        <p>هنوز حساب کاربریتو نساختی؟ <a href="#">اینجارو کلیک کن</a></p>
+      </form>
+    </div>
+
+    <!-- login-form section ended -->
+
+    
+
+
+
+
+    <script src="js/products.js"></script>
+</body>
+</html>
