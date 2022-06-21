@@ -669,3 +669,52 @@ section {
 }
 
 /* login-form section ended */
+
+/* home section started */
+
+.home{
+    height: 85vh;
+    display: flex;
+}
+.right{
+    width: 50%;
+    position: relative;
+    
+}
+.shape{
+    height: 100%;
+    width: 400px;
+    background-color: var(--main-color);
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    position: absolute;
+    right: 10%;
+}
+.circle-shape{
+    height: 400px;
+    width: 400px;
+    background-color: var(--second-color);
+    position: absolute;
+    clip-path: circle(50% at 50% 50%);
+    right: 15%;
+    top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dark .circle-shape{
+    background-color: var(--third-color);
+}
+.circle-shape img{
+    
+    height: 250px;
+}
+.left{
+    background-color: rgb(50, 154, 50);
+    width: 50%;
+    
+
+}
+
+/* home section ended */
+
+
