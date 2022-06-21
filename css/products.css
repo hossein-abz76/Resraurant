@@ -758,7 +758,7 @@ section {
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
 }
-.card-container .dark .card {
+.dark .card-container .card {
     
     color: var(--third-color);
     
@@ -932,81 +932,6 @@ section {
 /* footer section ended  */
 
 
-/* media query started */
-
-@media (max-width: 1195px) {
-   
-
-    @media (max-width: 991px) {
-        html {
-            font-size: 55%;
-        }
-
-        .header {
-            padding: 2rem;
-        }
-
-        section {
-            padding: 2rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        #menu-btn {
-            display: inline-block;
-        }
-        .header .navbar {
-            position: absolute;
-            top: 99%;
-            left: 0;
-            right: 0;
-            background: #fff;
-            border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
-            border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        }
-
-        .dark .header .navbar {
-            background: var(--second-color);
-            border-top: 0.1rem solid var(--main-color);
-            border-bottom: 0.1rem solid var(--main-color);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        }
-
-        .header .navbar.active {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        .header .navbar a {
-            font-size: 2rem;
-            margin: 2rem;
-            display: block;
-        }
-
-    }
-
-    @media (max-width: 450px) {
-        html {
-            font-size: 50%;
-        }
-
-
-        .shopping-cart-container .cart-total .box {
-            text-align: center;
-        }
-
-        .shopping-cart-container .cart-total .box .btn {
-            width: 100%;
-        }
-
-    }
-}
-
-/* media query ended */
-
 /* scrollTop section started */
 
 .circle {
@@ -1140,3 +1065,94 @@ section {
 }
 
 /* alert section ended */
+
+
+/* media query started */
+
+@media (max-width: 1195px) {
+   
+
+    @media (max-width: 991px) {
+        html {
+            font-size: 55%;
+        }
+
+        .header {
+            padding: 2rem;
+        }
+
+        section {
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #menu-btn {
+            display: inline-block;
+        }
+        .header .navbar {
+            position: absolute;
+            top: 99%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+            border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+
+        .dark .header .navbar {
+            background: var(--second-color);
+            border-top: 0.1rem solid var(--main-color);
+            border-bottom: 0.1rem solid var(--main-color);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+
+        .header .navbar.active {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .header .navbar a {
+            font-size: 2rem;
+            margin: 2rem;
+            display: block;
+        }
+
+        .home .right {
+            display: none;
+        }
+        .home .left {
+            width: 100%;
+        }
+        .circle .btn {
+            top: -4px;
+            left: 5px;
+        }
+
+    }
+
+    @media (max-width: 450px) {
+        html {
+            font-size: 50%;
+        }
+
+
+        .shopping-cart-container .cart-total .box {
+            text-align: center;
+        }
+
+        .shopping-cart-container .cart-total .box .btn {
+            width: 100%;
+        }
+        .circle .btn {
+            top: -3px;
+            left: 5px;
+        }
+
+    }
+}
+
+/* media query ended */

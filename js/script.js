@@ -170,6 +170,7 @@ function removeAlertHandler() {
 }
 /* add/remove alert section ended */
 
+
 /* popular section started */
 
 let popularContainer = $.getElementById('popular-container')
@@ -211,15 +212,13 @@ isFavorite.forEach(function (food) {
       <span> ${food.star} </span>
     </div>
     <div class="price">${food.price} تومان <span>${food.oldPrice}</span></div>
-    <a href="#" class="btn"  onclick="addFoodToUserBasket(${food.id})">افزودن به سبد</a>
+    <a class="btn"  onclick="addFoodToUserBasket(${food.id})">افزودن به سبد</a>
   </div>
 </div>`)
 
 })
 
-
 /* popular section ended */
-
 
 
 /* menu section started */
@@ -243,18 +242,35 @@ isMenu.forEach(function (food) {
 let userBasket = []
 
 function addFoodToUserBasket(foodId) {
-  let mainFood = foodArray.find(function (food) {
-    return food.id === foodId
-  })
+  let isFoodExistInBasket = userBasket.some(function (food) {
+    if (food.id === foodId) {
+      return true;
+    }
+  });
+
+  if (isFoodExistInBasket) {
+    userBasket.find(function (food) {
+      if (food.id === foodId) {
+        food.count++;
+      }
+    });
+
+    basketFoodGenerator(userBasket);
+    setIntoLocalStorage(userBasket)
+    calTotalPrice(userBasket);
+
+  } else {
+    let mainFood = foodArray.find(function (food) {
+      return food.id === foodId
+    })
 
   userBasket.push(mainFood)
   basketFoodGenerator(userBasket)
   setIntoLocalStorage(userBasket)
   calTotalPrice(userBasket)
+  
 
-
-}
-
+}}
 
 function setIntoLocalStorage(items) {
   localStorage.setItem('foods',JSON.stringify(items))
@@ -393,7 +409,7 @@ function updateFoodCount(foodId, newCount) {
 window.onload = function () {
   getFromLocalStorage()
   getFromLocalStorageTotalPrice()
-  // loaderElem.classList.add('hidden')
+  loaderElem.classList.add('hidden')
   let localStorageTheme = localStorage.getItem("theme");
   if (localStorageTheme === "dark") {
     $.body.classList.add("dark");

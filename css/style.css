@@ -1445,140 +1445,6 @@ section {
 /* footer section ended  */
 
 
-/* media query started */
-
-@media (max-width: 1195px) {
-    .count-down {
-        display: none;
-        visibility: hidden;
-    }
-
-    .home .image .home-img {
-        width: 68rem;
-        margin-top: -11rem;
-    }
-
-    .home .home-parallax-img {
-        top: -4rem;
-        right: 63rem;
-        width: 29vw;
-    }
-
-    .home .home-parallax-img2 {
-        position: absolute;
-        top: -29rem;
-        right: -13rem;
-        width: 41vw;
-        z-index: -1;
-    }
-
-    @media (max-width: 991px) {
-        html {
-            font-size: 55%;
-        }
-
-        .header {
-            padding: 2rem;
-        }
-
-        section {
-            padding: 2rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        #menu-btn {
-            display: inline-block;
-        }
-
-        .banner .row-banner .content p {
-            color: var(--third-color);
-        }
-
-        .header .navbar {
-            position: absolute;
-            top: 99%;
-            left: 0;
-            right: 0;
-            background: #fff;
-            border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
-            border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        }
-
-        .dark .header .navbar {
-            background: var(--second-color);
-            border-top: 0.1rem solid var(--main-color);
-            border-bottom: 0.1rem solid var(--main-color);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        }
-
-        .header .navbar.active {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        .header .navbar a {
-            font-size: 2rem;
-            margin: 2rem;
-            display: block;
-        }
-
-        .home .home-parallax-img,
-        .home-parallax-img2,
-        .image .home-img {
-            display: none;
-        }
-
-        .order form .flex .inputBox {
-            width: 100%;
-        }
-    }
-
-    @media (max-width: 450px) {
-        html {
-            font-size: 50%;
-        }
-
-        .banner .row-banner .content h3 {
-            display: none;
-        }
-
-        .banner .row-banner .content p {
-            background-color: var(--second-color);
-            border-radius: 10px 0 0 50px;
-            text-align: center;
-            font-size: 3rem;
-        }
-
-        .home .home-parallax-img,
-        .home-parallax-img2,
-        .image .home-img {
-            display: none;
-        }
-
-        .shopping-cart-container .cart-total .box {
-            text-align: center;
-        }
-
-        .shopping-cart-container .cart-total .box .btn {
-            width: 100%;
-        }
-
-        .home .content h3 {
-            font-size: 3rem;
-        }
-
-        .home .content p {
-            font-size: 1.5rem;
-        }
-    }
-}
-
-/* media query ended */
-
 /* scrollTop section started */
 
 .circle {
@@ -1758,3 +1624,147 @@ section {
 }
 
 /* alert section ended */
+
+/* media query started */
+
+@media (max-width: 1195px) {
+    .count-down {
+        display: none;
+        visibility: hidden;
+    }
+
+    .home .image .home-img {
+        width: 68rem;
+        margin-top: -11rem;
+    }
+
+    .home .home-parallax-img {
+        top: -4rem;
+        right: 63rem;
+        width: 29vw;
+    }
+
+    .home .home-parallax-img2 {
+        position: absolute;
+        top: -29rem;
+        right: -13rem;
+        width: 41vw;
+        z-index: -1;
+    }
+
+    @media (max-width: 991px) {
+        html {
+            font-size: 55%;
+        }
+
+        .header {
+            padding: 2rem;
+        }
+
+        section {
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #menu-btn {
+            display: inline-block;
+        }
+
+        .banner .row-banner .content p {
+            color: var(--third-color);
+        }
+
+        .header .navbar {
+            position: absolute;
+            top: 99%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+            border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+
+        .dark .header .navbar {
+            background: var(--second-color);
+            border-top: 0.1rem solid var(--main-color);
+            border-bottom: 0.1rem solid var(--main-color);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+
+        .header .navbar.active {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .header .navbar a {
+            font-size: 2rem;
+            margin: 2rem;
+            display: block;
+        }
+
+        .home .home-parallax-img,
+        .home-parallax-img2,
+        .image .home-img {
+            display: none;
+        }
+
+        .order form .flex .inputBox {
+            width: 100%;
+        }
+
+        .circle .btn {
+            top: -4px;
+            left: 5px;
+        }
+    }
+
+    @media (max-width: 450px) {
+        html {
+            font-size: 50%;
+        }
+
+        .banner .row-banner .content h3 {
+            display: none;
+        }
+
+        .banner .row-banner .content p {
+            background-color: var(--second-color);
+            border-radius: 10px 0 0 50px;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        .home .home-parallax-img,
+        .home-parallax-img2,
+        .image .home-img {
+            display: none;
+        }
+
+        .shopping-cart-container .cart-total .box {
+            text-align: center;
+        }
+
+        .shopping-cart-container .cart-total .box .btn {
+            width: 100%;
+        }
+
+        .home .content h3 {
+            font-size: 3rem;
+        }
+
+        .home .content p {
+            font-size: 1.5rem;
+        }
+
+        .circle .btn {
+            top: -3px;
+            left: 5px;
+        }
+    }
+}
+
+/* media query ended */

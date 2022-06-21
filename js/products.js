@@ -21,6 +21,7 @@ let cardLogo = $.querySelector("#card-logo");
 let cartH2Elem = $.querySelector("#cart-h2");
 let foodPrice = $.querySelector(".food-price");
 let foodDetails = $.querySelector(".food-details");
+let circleShapeImg = $.querySelector("#circle-shape-img");
 
 homeBackBtn.addEventListener('click',function () {
     location.href = 'index.html'
@@ -158,6 +159,7 @@ let foodArray = [
   if (mainFoodObj) {
     
     cardLogo.setAttribute('src', mainFoodObj.img)  
+    circleShapeImg.setAttribute('src', mainFoodObj.img)  
     cartH2Elem.innerHTML = mainFoodObj.title
     foodPrice.innerHTML = mainFoodObj.price
     foodDetails.innerHTML = mainFoodObj.details
@@ -169,17 +171,34 @@ let foodArray = [
 let userBasket = []
 
 function addFoodToUserBasket(foodId) {
-  let mainFood = foodArray.find(function (food) {
-    return food.id === foodId
-  })
+  let isFoodExistInBasket = userBasket.some(function (food) {
+    if (food.id === foodId) {
+      return true;
+    }
+  });
+
+  if (isFoodExistInBasket) {
+    userBasket.find(function (food) {
+      if (food.id === foodId) {
+        food.count++;
+      }
+    });
+
+    basketFoodGenerator(userBasket);
+    setIntoLocalStorage(userBasket)
+    calTotalPrice(userBasket);
+
+  } else {
+    let mainFood = foodArray.find(function (food) {
+      return food.id === foodId
+    })
 
   userBasket.push(mainFood)
   basketFoodGenerator(userBasket)
   setIntoLocalStorage(userBasket)
   calTotalPrice(userBasket)
 
-
-}
+}}
 
 
 function setIntoLocalStorage(items) {
@@ -320,7 +339,7 @@ function updateFoodCount(foodId, newCount) {
 window.onload = function () {
   getFromLocalStorage()
   getFromLocalStorageTotalPrice()
-  // loaderElem.classList.add('hidden')
+  loaderElem.classList.add('hidden')
   let localStorageTheme = localStorage.getItem("theme");
   if (localStorageTheme === "dark") {
     $.body.classList.add("dark");
