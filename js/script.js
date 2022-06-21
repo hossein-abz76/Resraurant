@@ -196,7 +196,7 @@ let isFavorite = foodArray.filter(function (food) {
 })
 isFavorite.forEach(function (food) {
   popularContainer.insertAdjacentHTML('beforeend',`<div class="box">
-  <a href="#" class="fas fa-external-link-alt"></a>
+  <a href="second-page.html?id=${food.id}" class="fas fa-external-link-alt" target="_blank"></a>
   <div class="image">
     <img src="${food.img}" alt="${food.title}" />
   </div>
@@ -211,7 +211,7 @@ isFavorite.forEach(function (food) {
       <span> ${food.star} </span>
     </div>
     <div class="price">${food.price} تومان <span>${food.oldPrice}</span></div>
-    <a href="#" class="btn" onclick="addFoodToUserBasket(${food.id})">افزودن به سبد</a>
+    <a href="#" class="btn"  onclick="addFoodToUserBasket(${food.id})">افزودن به سبد</a>
   </div>
 </div>`)
 
@@ -229,7 +229,7 @@ let isMenu = foodArray.filter(function (food) {
   return food.favorite === false
 })
 isMenu.forEach(function (food) {
-  menuContainer.insertAdjacentHTML('beforeend',`<a href="#" class="box" onclick="addFoodToUserBasket(${food.id})">
+  menuContainer.insertAdjacentHTML('beforeend',`<a href="second-page.html?id=${food.id}" class="box" onclick="addFoodToUserBasket(${food.id})" target="_blank">
   <img src="${food.img}" alt="${food.title}" />
   <div class="content">
     <h3>${food.title}</h3>
