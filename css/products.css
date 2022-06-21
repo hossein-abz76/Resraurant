@@ -672,16 +672,21 @@ section {
 
 /* home section started */
 
-.home{
+.home {
     height: 85vh;
     display: flex;
 }
-.right{
+
+.right {
     width: 50%;
     position: relative;
-    
 }
-.shape{
+
+.dark .right {
+    background-color: var(--second-color);
+}
+
+.shape {
     height: 100%;
     width: 400px;
     background-color: var(--main-color);
@@ -689,7 +694,8 @@ section {
     position: absolute;
     right: 10%;
 }
-.circle-shape{
+
+.circle-shape {
     height: 400px;
     width: 400px;
     background-color: var(--second-color);
@@ -701,20 +707,81 @@ section {
     justify-content: center;
     align-items: center;
 }
-.dark .circle-shape{
+
+.dark .circle-shape {
     background-color: var(--third-color);
 }
-.circle-shape img{
-    
+
+.circle-shape img {
+
     height: 250px;
 }
-.left{
-    background-color: rgb(50, 154, 50);
-    width: 50%;
-    
 
+.left {
+    width: 50%;
+    background-image: url(../img/bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.dark .left {
+    background-color: var(--second-color);
 }
 
 /* home section ended */
 
 
+/* left home section started */
+
+.card-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/back.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container .card {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 440px;
+    color: var(--second-color);
+    text-align: center;
+    padding: 50px 35px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+.card-container .dark .card {
+    
+    color: var(--third-color);
+    
+}
+
+.card-container .card .logo {
+    border-radius: 50%;
+    width: 140px;
+    display: none;
+}
+
+.card-container .card h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+}
+
+.card-container .card p {
+    font-size: 15px;
+    max-width: 330px;
+    font-weight: 100;
+    margin: 10px auto;
+}
+
+
+/* left home section ended */
