@@ -196,7 +196,7 @@ let isFavorite = foodArray.filter(function (food) {
   return food.favorite === true
 })
 isFavorite.forEach(function (food) {
-  popularContainer.insertAdjacentHTML('beforeend',`<div class="box">
+  popularContainer.insertAdjacentHTML('beforeend',`<div class="box" data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-scale="1.05">
   <a href="second-page.html?id=${food.id}" class="fas fa-external-link-alt" target="_blank"></a>
   <div class="image">
     <img src="${food.img}" alt="${food.title}" />

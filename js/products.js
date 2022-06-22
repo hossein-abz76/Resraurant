@@ -132,7 +132,7 @@ function removeAlertHandler() {
 /* add/remove alert section ended */
 
 let foodArray = [
-    {id : 1, title: 'گیوزا ژاپنی', price: '235000',oldPrice: '250000', count: 1,star: 5, favorite: true, cat: 'launch', img: 'img/food-1.png', details: `گوشت، سویا، نمک، سیر، پیاز، آرد سوخاری`},
+    {id : 1, title: 'گیوزا ژاپنی', price: '235000',oldPrice: '250000', count: 1,star: 5, favorite: true, cat: 'launch', img: 'img/food-1.png', details: `گوشت، جوانه ماش، قارچ، سس سویا، زنجبیل `},
     {id : 2, title: 'برگر قارچ و پنیر', price: '110000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'burger', img: 'img/food-2.png', details: `گوشت، سویا، نمک، سیر، پیاز، آرد سوخاری`},
     {id : 3, title: 'پیتزا ایتالیایی', price: '100000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'pizza', img: 'img/food-3.png', details: `گوشت، سویا، نمک، سیر، پیاز، آرد سوخاری`},
     {id : 4, title: 'همبرگر سیاه', price: '110000',oldPrice: '130000', count: 1,star: 5, favorite: true, cat: 'burger', img: 'img/food-4.png', details: `گوشت، سویا، نمک، سیر، پیاز، آرد سوخاری`},
