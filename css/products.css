@@ -757,6 +757,7 @@ section {
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
+    
 }
 .dark .card-container .card {
     
@@ -767,12 +768,16 @@ section {
 .card-container .card .logo {
     border-radius: 50%;
     width: 140px;
+    
+
 }
 
 .card-container .card h2 {
     font-size: 30px;
     font-weight: 600;
     margin: 20px 0 10px 0;
+    
+
 }
 
 .card-container .card p {

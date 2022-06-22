@@ -201,7 +201,7 @@ isFavorite.forEach(function (food) {
   <div class="image">
     <img src="${food.img}" alt="${food.title}" />
   </div>
-  <div class="content">
+  <div class="content" >
     <h3>${food.title}</h3>
     <div class="stars">
       <i class="fas fa-star"></i>
