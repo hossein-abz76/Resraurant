@@ -1654,6 +1654,51 @@ section {
 
 /* alert section ended */
 
+
+/* custom contextMenu started */
+
+.contextMenu {
+    position: absolute;
+}
+
+.contextMainMenu {
+    backdrop-filter: blur(4px) saturate(181%);
+    -webkit-backdrop-filter: blur(4px) saturate(181%);
+    background-color: rgba(40, 22, 17, 0.518);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    position: relative;
+    width: 15rem;
+
+}
+
+.context-subMenu > a {
+    position: absolute;
+    border: 0;
+    padding: 5px 30px 5px 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: unset;
+    color: #fff;
+    transition: 0.2s linear;
+    font-size:1.5rem;
+
+}
+
+.context-subMenu>a:hover {
+    color: var(--main-color);
+    transform: scale(1.1) translateX(-10px);
+}
+
+/* custom contextMenu ended */
+
+
 /* media query started */
 
 @media (max-width: 1195px) {

@@ -387,3 +387,38 @@ window.onload = function () {
 foodCartBtn.onclick = () => {
     addFoodToUserBasket(Number(mainFoodID))
 }
+
+/* custom contextMenu started */
+
+let contextMenu = $.querySelector('#contextMenu')
+
+function contextHandler(event) {
+    event.preventDefault()
+  
+    if (contextMenu.style.display === 'none') {
+  
+      contextMenu.style.left = event.pageX + 'px'
+      contextMenu.style.top = event.pageY + 'px'
+      contextMenu.style.display = 'block'
+    } else {
+      contextMenu.style.left = event.pageX + 'px'
+      contextMenu.style.top = event.pageY + 'px'
+    }
+  
+  }
+  
+  function clickContextMenu() {
+    contextMenu.style.display = 'none'
+  }
+  
+  function keyDownHandler(event) {
+    if (event.keyCode === 27)
+      contextMenu.style.display = 'none'
+  }
+  
+  
+  window.addEventListener('contextmenu', contextHandler)
+  window.addEventListener('click', clickContextMenu)
+  window.addEventListener('keydown', keyDownHandler)
+
+/* custom contextMenu ended */
