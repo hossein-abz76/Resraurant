@@ -256,7 +256,7 @@ function basketFoodGenerator(userBasket) {
     <div class="content" id='content'>
       <h3>${food.title}</h3>
       <span> تعداد : </span>
-      <input type="number" name="" value="${food.count}" id="unique${food.id}" onchange="updateFoodCount(${food.id}, event.target.value)"/>
+      <input type="number" min='1' name="" value="${food.count}" id="unique${food.id}" onchange="updateFoodCount(${food.id}, event.target.value)"/>
       <br />
       <span> قیمت : </span>
       <span class="price"> ${food.price * food.count} تومان </span>
