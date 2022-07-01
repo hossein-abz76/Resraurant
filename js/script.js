@@ -15,6 +15,8 @@ let cartForm = $.querySelector(".shopping-cart-container");
 let loginForm = $.querySelector(".login-form-container");
 let navbar = $.querySelector(".header .navbar");
 let paymentBtn = $.querySelector("#payment-btn");
+let innerCartCount = $.querySelector('.inner-cart-count')
+let allFoodsCount = 0;
 
 searchBtn.onclick = () => {
   searchForm.classList.toggle("active");
@@ -119,7 +121,7 @@ $.addEventListener("scroll", function () {
 
 /* countDown section started */
 
-let countDate = new Date("jun 30 , 2022 00:00:00").getTime();
+let countDate = new Date("jun 30 , 2023 00:00:00").getTime();
 
 function countDown() {
   let now = new Date().getTime();
@@ -212,7 +214,7 @@ isFavorite.forEach(function (food) {
       <span> ${food.star} </span>
     </div>
     <div class="price">${food.price} تومان <span>${food.oldPrice}</span></div>
-    <a class="btn"  onclick="addFoodToUserBasket(${food.id})">افزودن به سبد</a>
+    <a class="btn" onclick="addFoodToUserBasket(${food.id})" >افزودن به سبد</a>
   </div>
 </div>`)
 
@@ -258,6 +260,8 @@ function addFoodToUserBasket(foodId) {
     basketFoodGenerator(userBasket);
     setIntoLocalStorage(userBasket)
     calTotalPrice(userBasket);
+    userBasketLength(userBasket)
+    setIntoLocalStorageInnerCartCount(allFoodsCount)
 
   } else {
     let mainFood = foodArray.find(function (food) {
@@ -268,12 +272,27 @@ function addFoodToUserBasket(foodId) {
   basketFoodGenerator(userBasket)
   setIntoLocalStorage(userBasket)
   calTotalPrice(userBasket)
+  userBasketLength(userBasket)
+  setIntoLocalStorageInnerCartCount(allFoodsCount)
   
-
 }}
 
 function setIntoLocalStorage(items) {
   localStorage.setItem('foods',JSON.stringify(items))
+} 
+
+function userBasketLength(userBasket) {
+  allFoodsCount = 0
+  userBasket.forEach(function (food) {
+  
+    allFoodsCount += food.count
+  })
+  innerCartCount.innerHTML = Number(allFoodsCount)
+  
+}
+
+function setIntoLocalStorageInnerCartCount(allFoodsCount) {
+  localStorage.setItem('cart-count',allFoodsCount)
 } 
 
 function getFromLocalStorage() {
@@ -285,6 +304,17 @@ function getFromLocalStorage() {
   }
   
 }
+
+function getIntoLocalStorageInnerCartCount() {
+  let localStorageFoods = localStorage.getItem('cart-count')
+
+  if (localStorageFoods) {
+    userBasketLength(userBasket)
+  }
+  
+}
+
+
 
 let cartContainer = $.getElementById('cart-container')
 
@@ -377,10 +407,12 @@ paymentBtn.onclick = () => {
   userBasket = []
   basketFoodGenerator(userBasket)
   calTotalPrice(userBasket)
+  userBasketLength(userBasket)
   localStorage.removeItem('foods')
   localStorage.removeItem('beforeDiscount')
   localStorage.removeItem('discount')
   localStorage.removeItem('totalPrice')
+  localStorage.removeItem('cart-count')
 }
 
 function removeFoodFromCart(foodId) {
@@ -391,20 +423,23 @@ function removeFoodFromCart(foodId) {
   basketFoodGenerator(userBasket)
   setIntoLocalStorage(userBasket)
   calTotalPrice(userBasket)
+  userBasketLength(userBasket)
 }
 
 function updateFoodCount(foodId, newCount) {
 
   userBasket.forEach(function (food) {
     if (food.id === foodId) {
-      food.count = newCount
+      food.count = Number(newCount)
     }
   })
 
   basketFoodGenerator(userBasket)
   setIntoLocalStorage(userBasket)
   calTotalPrice(userBasket)
+  userBasketLength(userBasket)
 }
+
 
 window.onload = function () {
   getFromLocalStorage()
@@ -414,6 +449,9 @@ window.onload = function () {
   if (localStorageTheme === "dark") {
     $.body.classList.add("dark");
   }
+  getIntoLocalStorageInnerCartCount()
 };
 
 /* totalPrice section ended */
+
+

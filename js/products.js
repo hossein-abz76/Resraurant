@@ -22,6 +22,8 @@ let cartH2Elem = $.querySelector("#cart-h2");
 let foodPrice = $.querySelector(".food-price");
 let foodDetails = $.querySelector(".food-details");
 let circleShapeImg = $.querySelector("#circle-shape-img");
+let innerCartCount = $.querySelector('.inner-cart-count')
+let allFoodsCount = 0;
 
 homeBackBtn.addEventListener('click',function () {
     location.href = 'index.html'
@@ -187,6 +189,8 @@ function addFoodToUserBasket(foodId) {
     basketFoodGenerator(userBasket);
     setIntoLocalStorage(userBasket)
     calTotalPrice(userBasket);
+    userBasketLength(userBasket)
+    setIntoLocalStorageInnerCartCount(allFoodsCount)
 
   } else {
     let mainFood = foodArray.find(function (food) {
@@ -197,6 +201,8 @@ function addFoodToUserBasket(foodId) {
   basketFoodGenerator(userBasket)
   setIntoLocalStorage(userBasket)
   calTotalPrice(userBasket)
+  userBasketLength(userBasket)
+  setIntoLocalStorageInnerCartCount(allFoodsCount)
 
 }}
 
@@ -205,12 +211,35 @@ function setIntoLocalStorage(items) {
   localStorage.setItem('foods',JSON.stringify(items))
 } 
 
+function userBasketLength(userBasket) {
+  allFoodsCount = 0
+  userBasket.forEach(function (food) {
+  
+    allFoodsCount += food.count
+  })
+  innerCartCount.innerHTML = Number(allFoodsCount)
+  
+}
+
+function setIntoLocalStorageInnerCartCount(allFoodsCount) {
+  localStorage.setItem('cart-count',allFoodsCount)
+} 
+
 function getFromLocalStorage() {
   let localStorageFoods = localStorage.getItem('foods')
 
   if (localStorageFoods) {
     userBasket = JSON.parse(localStorageFoods)
     basketFoodGenerator(userBasket)
+  }
+  
+}
+
+function getIntoLocalStorageInnerCartCount() {
+  let localStorageFoods = localStorage.getItem('cart-count')
+
+  if (localStorageFoods) {
+    userBasketLength(userBasket)
   }
   
 }
@@ -306,10 +335,12 @@ paymentBtn.onclick = () => {
   userBasket = []
   basketFoodGenerator(userBasket)
   calTotalPrice(userBasket)
+  userBasketLength(userBasket)
   localStorage.removeItem('foods')
   localStorage.removeItem('beforeDiscount')
   localStorage.removeItem('discount')
   localStorage.removeItem('totalPrice')
+  localStorage.removeItem('cart-count')
 }
 
 function removeFoodFromCart(foodId) {
@@ -320,19 +351,22 @@ function removeFoodFromCart(foodId) {
   basketFoodGenerator(userBasket)
   setIntoLocalStorage(userBasket)
   calTotalPrice(userBasket)
+  userBasketLength(userBasket)
 }
 
 function updateFoodCount(foodId, newCount) {
 
   userBasket.forEach(function (food) {
     if (food.id === foodId) {
-      food.count = newCount
+      food.count = Number(newCount)
     }
   })
 
   basketFoodGenerator(userBasket)
   setIntoLocalStorage(userBasket)
   calTotalPrice(userBasket)
+  userBasketLength(userBasket)
+
 }
 
 
@@ -344,6 +378,7 @@ window.onload = function () {
   if (localStorageTheme === "dark") {
     $.body.classList.add("dark");
   }
+  getIntoLocalStorageInnerCartCount()
 };
 
 /* totalPrice section ended */

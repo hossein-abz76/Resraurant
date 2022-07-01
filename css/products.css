@@ -254,6 +254,27 @@ section {
     color: #fff;
     background: var(--main-color);
 }
+.fa-shopping-cart{
+    font-size: 50px;
+    position: relative;
+}
+.inner-cart-circle{
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    border-radius: .5rem;
+    background-color: red;
+    top: -7px;
+    left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-cart-count{
+    position: absolute;
+    font-size: 1rem;
+    color: #fff;
+}
 
 #menu-btn {
     display: none;
