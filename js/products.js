@@ -133,6 +133,25 @@ function removeAlertHandler() {
 }
 /* add/remove alert section ended */
 
+/* cursor section started */
+
+let cursor = $.querySelector(".cursor");
+
+$.addEventListener("mousemove", (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+
+  cursor.style.top = y + "px";
+  cursor.style.left = x + "px";
+  cursor.style.display = "block";
+
+});
+$.addEventListener("mouseout", () => {
+  cursor.style.display = "none";
+});
+
+/* cursor section ended */
+
 let foodArray = [
     {id : 1, title: 'گیوزا ژاپنی', price: '235000',oldPrice: '250000', count: 1,star: 5, favorite: true, cat: 'launch', img: 'img/food-1.png', details: `گوشت، جوانه ماش، قارچ، سس سویا، زنجبیل `},
     {id : 2, title: 'برگر قارچ و پنیر', price: '110000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'burger', img: 'img/food-2.png', details: `گوشت، سویا، نمک، سیر، پیاز، آرد سوخاری`},

@@ -26,6 +26,8 @@ body {
     text-transform: capitalize;
     -webkit-transition: .2s linear;
     transition: .2s linear;
+    cursor: none !important;
+
 }
 
 html {
@@ -33,6 +35,7 @@ html {
     overflow-x: hidden;
     scroll-padding-top: 8.5rem;
     scroll-behavior: smooth;
+
 }
 
 /* loader section started */
@@ -115,7 +118,22 @@ html {
     }
 }
 
+
 /* loader section ended */
+
+/* cursor section started */
+
+.cursor {
+    z-index: 2000;
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: all 0.001s linear;
+}
+
+/* cursor section ended */
 
 .dark {
     background-color: var(--second-color) !important;
@@ -254,11 +272,13 @@ section {
     color: #fff;
     background: var(--main-color);
 }
-.fa-shopping-cart{
+
+.fa-shopping-cart {
     font-size: 50px;
     position: relative;
 }
-.inner-cart-circle{
+
+.inner-cart-circle {
     position: absolute;
     height: 2rem;
     width: 2rem;
@@ -270,7 +290,8 @@ section {
     justify-content: center;
     align-items: center;
 }
-.inner-cart-count{
+
+.inner-cart-count {
     position: absolute;
     font-size: 1rem;
     color: #fff;
@@ -955,7 +976,7 @@ section {
 .popular .box-container .box .content h3 {
     font-size: 2rem;
     color: var(--second-color);
-    
+
 }
 
 .dark .popular .box-container .box .content h3 {
@@ -979,7 +1000,7 @@ section {
 .popular .box-container .box .content .price {
     font-size: 2rem;
     color: var(--second-color);
-    
+
 }
 
 .popular .box-container .box .content .price span {
@@ -1676,7 +1697,7 @@ section {
 
 }
 
-.context-subMenu > a {
+.context-subMenu>a {
     position: absolute;
     border: 0;
     padding: 5px 30px 5px 15px;
@@ -1687,7 +1708,7 @@ section {
     text-decoration: unset;
     color: #fff;
     transition: 0.2s linear;
-    font-size:1.5rem;
+    font-size: 1.5rem;
 
 }
 

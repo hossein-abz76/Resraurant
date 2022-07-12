@@ -2,7 +2,7 @@ let $ = document;
 
 // loader section started
 
-const loaderElem = document.querySelector('.loader-container')
+const loaderElem = document.querySelector(".loader-container");
 
 // loader section ended
 
@@ -15,7 +15,7 @@ let cartForm = $.querySelector(".shopping-cart-container");
 let loginForm = $.querySelector(".login-form-container");
 let navbar = $.querySelector(".header .navbar");
 let paymentBtn = $.querySelector("#payment-btn");
-let innerCartCount = $.querySelector('.inner-cart-count')
+let innerCartCount = $.querySelector(".inner-cart-count");
 let allFoodsCount = 0;
 
 searchBtn.onclick = () => {
@@ -88,8 +88,6 @@ switchBtn.addEventListener("click", function changeTheme() {
     localStorage.setItem("theme", "light");
   }
 });
-
-
 
 /* scrollTop section started */
 
@@ -172,33 +170,192 @@ function removeAlertHandler() {
 }
 /* add/remove alert section ended */
 
+/* cursor section started */
+
+let cursor = $.querySelector(".cursor");
+
+$.addEventListener("mousemove", (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+
+  cursor.style.top = y + "px";
+  cursor.style.left = x + "px";
+  cursor.style.display = "block";
+
+});
+$.addEventListener("mouseout", () => {
+  cursor.style.display = "none";
+});
+
+/* cursor section ended */
 
 /* popular section started */
 
-let popularContainer = $.getElementById('popular-container')
+let popularContainer = $.getElementById("popular-container");
 
 let foodArray = [
-  {id : 1, title: 'گیوزا ژاپنی', price: '235000',oldPrice: '250000', count: 1,star: 5, favorite: true, cat: 'launch', img: 'img/food-1.png'},
-  {id : 2, title: 'برگر قارچ و پنیر', price: '110000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'burger', img: 'img/food-2.png'},
-  {id : 3, title: 'پیتزا ایتالیایی', price: '100000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'pizza', img: 'img/food-3.png'},
-  {id : 4, title: 'همبرگر سیاه', price: '110000',oldPrice: '130000', count: 1,star: 5, favorite: true, cat: 'burger', img: 'img/food-4.png'},
-  {id : 5, title: 'پیتزا ریحان', price: '125000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'pizza', img: 'img/food-5.png'},
-  {id : 6, title: 'پیتزا سبزیجات', price: '90000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'pizza', img: 'img/food-6.png'},
-  {id : 7, title: 'دوبل برگر', price: '75000',oldPrice: '', count: 1,star: 5, favorite: true, cat: 'launch', img: 'img/food-7.png'},
-  {id : 8, title: 'پیتزا مخلوط', price: '95000',oldPrice: '', count: 1,star: 3, favorite: true, cat: 'burger', img: 'img/food-8.png'},
-  {id : 9, title: 'برگر مرغ', price: '85000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'burger', img: 'img/menu-1.png'},
-  {id : 10, title: 'پیتزا بروکلی', price: '135000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'burger', img: 'img/menu-2.png'},
-  {id : 11, title: 'اسنک پنیری', price: '55000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'pizza', img: 'img/menu-3.png'},
-  {id : 12, title: 'ساندویچ سرد', price: '75000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'launch', img: 'img/menu-4.png'},
-  {id : 13, title: 'سیب زمینی سرخ کرده', price: '45000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'dinner', img: 'img/menu-5.png'},
-  {id : 14, title: 'پیتزا ویژه', price: '155000',oldPrice: '', count: 1,star: 3, favorite: false, cat: 'pizza', img: 'img/menu-6.png'},
-  
-]
+  {
+    id: 1,
+    title: "گیوزا ژاپنی",
+    price: "235000",
+    oldPrice: "250000",
+    count: 1,
+    star: 5,
+    favorite: true,
+    cat: "launch",
+    img: "img/food-1.png",
+  },
+  {
+    id: 2,
+    title: "برگر قارچ و پنیر",
+    price: "110000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: true,
+    cat: "burger",
+    img: "img/food-2.png",
+  },
+  {
+    id: 3,
+    title: "پیتزا ایتالیایی",
+    price: "100000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: true,
+    cat: "pizza",
+    img: "img/food-3.png",
+  },
+  {
+    id: 4,
+    title: "همبرگر سیاه",
+    price: "110000",
+    oldPrice: "130000",
+    count: 1,
+    star: 5,
+    favorite: true,
+    cat: "burger",
+    img: "img/food-4.png",
+  },
+  {
+    id: 5,
+    title: "پیتزا ریحان",
+    price: "125000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: true,
+    cat: "pizza",
+    img: "img/food-5.png",
+  },
+  {
+    id: 6,
+    title: "پیتزا سبزیجات",
+    price: "90000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: true,
+    cat: "pizza",
+    img: "img/food-6.png",
+  },
+  {
+    id: 7,
+    title: "دوبل برگر",
+    price: "75000",
+    oldPrice: "",
+    count: 1,
+    star: 5,
+    favorite: true,
+    cat: "launch",
+    img: "img/food-7.png",
+  },
+  {
+    id: 8,
+    title: "پیتزا مخلوط",
+    price: "95000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: true,
+    cat: "burger",
+    img: "img/food-8.png",
+  },
+  {
+    id: 9,
+    title: "برگر مرغ",
+    price: "85000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: false,
+    cat: "burger",
+    img: "img/menu-1.png",
+  },
+  {
+    id: 10,
+    title: "پیتزا بروکلی",
+    price: "135000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: false,
+    cat: "burger",
+    img: "img/menu-2.png",
+  },
+  {
+    id: 11,
+    title: "اسنک پنیری",
+    price: "55000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: false,
+    cat: "pizza",
+    img: "img/menu-3.png",
+  },
+  {
+    id: 12,
+    title: "ساندویچ سرد",
+    price: "75000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: false,
+    cat: "launch",
+    img: "img/menu-4.png",
+  },
+  {
+    id: 13,
+    title: "سیب زمینی سرخ کرده",
+    price: "45000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: false,
+    cat: "dinner",
+    img: "img/menu-5.png",
+  },
+  {
+    id: 14,
+    title: "پیتزا ویژه",
+    price: "155000",
+    oldPrice: "",
+    count: 1,
+    star: 3,
+    favorite: false,
+    cat: "pizza",
+    img: "img/menu-6.png",
+  },
+];
 let isFavorite = foodArray.filter(function (food) {
-  return food.favorite === true
-})
+  return food.favorite === true;
+});
 isFavorite.forEach(function (food) {
-  popularContainer.insertAdjacentHTML('beforeend',`<div class="box" data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-scale="1.05">
+  popularContainer.insertAdjacentHTML(
+    "beforeend",
+    `<div class="box" data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-scale="1.05">
   <a href="second-page.html?id=${food.id}" class="fas fa-external-link-alt" target="_blank"></a>
   <div class="image">
     <img src="${food.img}" alt="${food.title}" />
@@ -216,32 +373,34 @@ isFavorite.forEach(function (food) {
     <div class="price">${food.price} تومان <span>${food.oldPrice}</span></div>
     <a class="btn" onclick="addFoodToUserBasket(${food.id})" >افزودن به سبد</a>
   </div>
-</div>`)
-
-})
+</div>`
+  );
+});
 
 /* popular section ended */
 
-
 /* menu section started */
 
-let menuContainer = $.getElementById('menu-container')
+let menuContainer = $.getElementById("menu-container");
 let isMenu = foodArray.filter(function (food) {
-  return food.favorite === false
-})
+  return food.favorite === false;
+});
 isMenu.forEach(function (food) {
-  menuContainer.insertAdjacentHTML('beforeend',`<a href="second-page.html?id=${food.id}" class="box" onclick="addFoodToUserBasket(${food.id})" target="_blank">
+  menuContainer.insertAdjacentHTML(
+    "beforeend",
+    `<a href="second-page.html?id=${food.id}" class="box" onclick="addFoodToUserBasket(${food.id})" target="_blank">
   <img src="${food.img}" alt="${food.title}" />
   <div class="content">
     <h3>${food.title}</h3>
     <div class="price">${food.price} تومان </div>
   </div>
-</a>`)
-})
+</a>`
+  );
+});
 
 /* menu section ended */
 
-let userBasket = []
+let userBasket = [];
 
 function addFoodToUserBasket(foodId) {
   let isFoodExistInBasket = userBasket.some(function (food) {
@@ -258,236 +417,222 @@ function addFoodToUserBasket(foodId) {
     });
 
     basketFoodGenerator(userBasket);
-    setIntoLocalStorage(userBasket)
+    setIntoLocalStorage(userBasket);
     calTotalPrice(userBasket);
-    userBasketLength(userBasket)
-    setIntoLocalStorageInnerCartCount(allFoodsCount)
-
+    userBasketLength(userBasket);
+    setIntoLocalStorageInnerCartCount(allFoodsCount);
   } else {
     let mainFood = foodArray.find(function (food) {
-      return food.id === foodId
-    })
+      return food.id === foodId;
+    });
 
-  userBasket.push(mainFood)
-  basketFoodGenerator(userBasket)
-  setIntoLocalStorage(userBasket)
-  calTotalPrice(userBasket)
-  userBasketLength(userBasket)
-  setIntoLocalStorageInnerCartCount(allFoodsCount)
-  
-}}
+    userBasket.push(mainFood);
+    basketFoodGenerator(userBasket);
+    setIntoLocalStorage(userBasket);
+    calTotalPrice(userBasket);
+    userBasketLength(userBasket);
+    setIntoLocalStorageInnerCartCount(allFoodsCount);
+  }
+}
 
 function setIntoLocalStorage(items) {
-  localStorage.setItem('foods',JSON.stringify(items))
-} 
+  localStorage.setItem("foods", JSON.stringify(items));
+}
 
 function userBasketLength(userBasket) {
-  allFoodsCount = 0
+  allFoodsCount = 0;
   userBasket.forEach(function (food) {
-  
-    allFoodsCount += food.count
-  })
-  innerCartCount.innerHTML = Number(allFoodsCount)
-  
+    allFoodsCount += food.count;
+  });
+  innerCartCount.innerHTML = Number(allFoodsCount);
 }
 
 function setIntoLocalStorageInnerCartCount(allFoodsCount) {
-  localStorage.setItem('cart-count',allFoodsCount)
-} 
+  localStorage.setItem("cart-count", allFoodsCount);
+}
 
 function getFromLocalStorage() {
-  let localStorageFoods = localStorage.getItem('foods')
+  let localStorageFoods = localStorage.getItem("foods");
 
   if (localStorageFoods) {
-    userBasket = JSON.parse(localStorageFoods)
-    basketFoodGenerator(userBasket)
+    userBasket = JSON.parse(localStorageFoods);
+    basketFoodGenerator(userBasket);
   }
-  
 }
 
 function getIntoLocalStorageInnerCartCount() {
-  let localStorageFoods = localStorage.getItem('cart-count')
+  let localStorageFoods = localStorage.getItem("cart-count");
 
   if (localStorageFoods) {
-    userBasketLength(userBasket)
+    userBasketLength(userBasket);
   }
-  
 }
 
-
-
-let cartContainer = $.getElementById('cart-container')
+let cartContainer = $.getElementById("cart-container");
 
 function basketFoodGenerator(userBasket) {
-  cartContainer.innerHTML = ''
+  cartContainer.innerHTML = "";
   userBasket.forEach(function (food) {
-    
-    cartContainer.insertAdjacentHTML("beforeend", `<div class="box">
+    cartContainer.insertAdjacentHTML(
+      "beforeend",
+      `<div class="box">
     <i class="fas fa-times" onclick="removeFoodFromCart(${food.id})"></i>
     <img src="${food.img}" alt="${food.title}" />
     <div class="content" id='content'>
       <h3>${food.title}</h3>
       <span> تعداد : </span>
-      <input type="number" name="" min='1' value="${food.count}" id="unique${food.id}" onchange="updateFoodCount(${food.id}, event.target.value)"/>
+      <input type="number" name="" min='1' value="${food.count}" id="unique${
+        food.id
+      }" onchange="updateFoodCount(${food.id}, event.target.value)"/>
       <br />
       <span> قیمت : </span>
       <span class="price"> ${food.price * food.count} تومان </span>
     </div>
-  </div>`)
-  
-
-  })
+  </div>`
+    );
+  });
 }
-
-
 
 /* totalPrice section started */
 
-let totalPrice = $.getElementById('total-price')
-let beforeDiscount = $.getElementById('before-ِdiscount')   
-let discount = $.querySelector('.discount-price')
+let totalPrice = $.getElementById("total-price");
+let beforeDiscount = $.getElementById("before-ِdiscount");
+let discount = $.querySelector(".discount-price");
 
 function calTotalPrice(userBasket) {
-  
-  let beforeDiscountValue = 0
-  let discountValue = 0  
-  let totalPriceValue = 0
-  let totalOldPrice = 0
-  let totalWithoutOldPrice = 0
+  let beforeDiscountValue = 0;
+  let discountValue = 0;
+  let totalPriceValue = 0;
+  let totalOldPrice = 0;
+  let totalWithoutOldPrice = 0;
 
   userBasket.forEach(function (food) {
-    totalPriceValue += food.count * food.price
-    if (food.oldPrice == '') {
-      food.oldPrice = 0
+    totalPriceValue += food.count * food.price;
+    if (food.oldPrice == "") {
+      food.oldPrice = 0;
     }
-    totalOldPrice += food.count * food.oldPrice
-    
-  })
+    totalOldPrice += food.count * food.oldPrice;
+  });
 
   let withoutOldPrice = userBasket.filter(function (food) {
-    return food.oldPrice == ''
-  })
+    return food.oldPrice == "";
+  });
   withoutOldPrice.forEach(function (food) {
-    totalWithoutOldPrice += food.count * food.price
-    
-  })
-  beforeDiscountValue = totalWithoutOldPrice + totalOldPrice
-  discountValue = beforeDiscountValue - totalPriceValue
-  
-  totalPrice.innerHTML = totalPriceValue + ' تومان'
-  beforeDiscount.innerHTML = beforeDiscountValue + ' تومان'
-  discount.innerHTML = discountValue + ' تومان'
+    totalWithoutOldPrice += food.count * food.price;
+  });
+  beforeDiscountValue = totalWithoutOldPrice + totalOldPrice;
+  discountValue = beforeDiscountValue - totalPriceValue;
 
-  setIntoLocalStorageTotalPrice(beforeDiscountValue,discountValue,totalPriceValue)
+  totalPrice.innerHTML = totalPriceValue + " تومان";
+  beforeDiscount.innerHTML = beforeDiscountValue + " تومان";
+  discount.innerHTML = discountValue + " تومان";
+
+  setIntoLocalStorageTotalPrice(
+    beforeDiscountValue,
+    discountValue,
+    totalPriceValue
+  );
 }
 
-function setIntoLocalStorageTotalPrice(item1,item2,item3) {
-  localStorage.setItem('beforeDiscount',item1)
-  localStorage.setItem('discount',item2)
-  localStorage.setItem('totalPrice',item3)
-} 
+function setIntoLocalStorageTotalPrice(item1, item2, item3) {
+  localStorage.setItem("beforeDiscount", item1);
+  localStorage.setItem("discount", item2);
+  localStorage.setItem("totalPrice", item3);
+}
 
 function getFromLocalStorageTotalPrice() {
-  let localStorageTotalBeforeDiscountPrice = localStorage.getItem('beforeDiscount')
-  let localStorageTotalDiscountPrice = localStorage.getItem('discount')
-  let localStorageTotalPrice = localStorage.getItem('totalPrice')
+  let localStorageTotalBeforeDiscountPrice =
+    localStorage.getItem("beforeDiscount");
+  let localStorageTotalDiscountPrice = localStorage.getItem("discount");
+  let localStorageTotalPrice = localStorage.getItem("totalPrice");
 
   if (localStorageTotalBeforeDiscountPrice) {
-    beforeDiscount.innerHTML = localStorageTotalBeforeDiscountPrice + ' تومان'
+    beforeDiscount.innerHTML = localStorageTotalBeforeDiscountPrice + " تومان";
   }
   if (localStorageTotalDiscountPrice) {
-    discount.innerHTML = localStorageTotalDiscountPrice + ' تومان'
+    discount.innerHTML = localStorageTotalDiscountPrice + " تومان";
   }
   if (localStorageTotalPrice) {
-    totalPrice.innerHTML = localStorageTotalPrice + ' تومان'
+    totalPrice.innerHTML = localStorageTotalPrice + " تومان";
   }
 }
 
 paymentBtn.onclick = () => {
-  userBasket = []
-  basketFoodGenerator(userBasket)
-  calTotalPrice(userBasket)
-  userBasketLength(userBasket)
-  localStorage.removeItem('foods')
-  localStorage.removeItem('beforeDiscount')
-  localStorage.removeItem('discount')
-  localStorage.removeItem('totalPrice')
-  localStorage.removeItem('cart-count')
-}
+  userBasket = [];
+  basketFoodGenerator(userBasket);
+  calTotalPrice(userBasket);
+  userBasketLength(userBasket);
+  localStorage.removeItem("foods");
+  localStorage.removeItem("beforeDiscount");
+  localStorage.removeItem("discount");
+  localStorage.removeItem("totalPrice");
+  localStorage.removeItem("cart-count");
+};
 
 function removeFoodFromCart(foodId) {
   userBasket = userBasket.filter(function (food) {
-    food.count = 1
-    return food.id != foodId
-  })
-  basketFoodGenerator(userBasket)
-  setIntoLocalStorage(userBasket)
-  calTotalPrice(userBasket)
-  userBasketLength(userBasket)
+    food.count = 1;
+    return food.id != foodId;
+  });
+  basketFoodGenerator(userBasket);
+  setIntoLocalStorage(userBasket);
+  calTotalPrice(userBasket);
+  userBasketLength(userBasket);
 }
 
 function updateFoodCount(foodId, newCount) {
-
   userBasket.forEach(function (food) {
     if (food.id === foodId) {
-      food.count = Number(newCount)
+      food.count = Number(newCount);
     }
-  })
+  });
 
-  basketFoodGenerator(userBasket)
-  setIntoLocalStorage(userBasket)
-  calTotalPrice(userBasket)
-  userBasketLength(userBasket)
+  basketFoodGenerator(userBasket);
+  setIntoLocalStorage(userBasket);
+  calTotalPrice(userBasket);
+  userBasketLength(userBasket);
 }
 
-
 window.onload = function () {
-  getFromLocalStorage()
-  getFromLocalStorageTotalPrice()
-  loaderElem.classList.add('hidden')
+  getFromLocalStorage();
+  getFromLocalStorageTotalPrice();
+  loaderElem.classList.add("hidden");
   let localStorageTheme = localStorage.getItem("theme");
   if (localStorageTheme === "dark") {
     $.body.classList.add("dark");
   }
-  getIntoLocalStorageInnerCartCount()
+  getIntoLocalStorageInnerCartCount();
 };
 
 /* totalPrice section ended */
 
-
 /* custom contextMenu started */
 
-let contextMenu = $.querySelector('#contextMenu')
+let contextMenu = $.querySelector("#contextMenu");
 
 function contextHandler(event) {
-    event.preventDefault()
-  
-    if (contextMenu.style.display === 'none') {
-  
-      contextMenu.style.left = event.pageX + 'px'
-      contextMenu.style.top = event.pageY + 'px'
-      contextMenu.style.display = 'block'
-    } else {
-      contextMenu.style.left = event.pageX + 'px'
-      contextMenu.style.top = event.pageY + 'px'
-    }
-  
+  event.preventDefault();
+
+  if (contextMenu.style.display === "none") {
+    contextMenu.style.left = event.pageX + "px";
+    contextMenu.style.top = event.pageY + "px";
+    contextMenu.style.display = "block";
+  } else {
+    contextMenu.style.left = event.pageX + "px";
+    contextMenu.style.top = event.pageY + "px";
   }
-  
-  function clickContextMenu() {
-    contextMenu.style.display = 'none'
-  }
-  
-  function keyDownHandler(event) {
-    if (event.keyCode === 27)
-      contextMenu.style.display = 'none'
-  }
-  
-  
-  window.addEventListener('contextmenu', contextHandler)
-  window.addEventListener('click', clickContextMenu)
-  window.addEventListener('keydown', keyDownHandler)
+}
+
+function clickContextMenu() {
+  contextMenu.style.display = "none";
+}
+
+function keyDownHandler(event) {
+  if (event.keyCode === 27) contextMenu.style.display = "none";
+}
+
+window.addEventListener("contextmenu", contextHandler);
+window.addEventListener("click", clickContextMenu);
+window.addEventListener("keydown", keyDownHandler);
 
 /* custom contextMenu ended */
-
-
