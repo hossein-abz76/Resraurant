@@ -130,7 +130,7 @@ html {
     pointer-events: none;
     position: absolute;
     transform: translate(-50%, -50%);
-    transition: all 0.001s linear;
+    transition: none !important;
 }
 
 /* cursor section ended */
@@ -363,6 +363,8 @@ section {
     }
 }
 
+/* search-form section started */
+
 .search-form-container {
     position: fixed;
     top: 8.5rem;
@@ -396,10 +398,12 @@ section {
     align-items: center;
     -webkit-animation: fadeUp .4s linear;
     animation: fadeUp .4s linear;
+    position: relative;
 }
 
 .dark .search-form-container form {
     border-bottom: 0.2rem solid var(--main-color);
+    
 
 }
 
@@ -436,6 +440,55 @@ section {
 .search-form-container form label:hover {
     color: var(--main-color);
 }
+
+.search-form-container form .autocom-box {
+    list-style: none;
+    position: absolute;
+    background-color: var(--third-color);
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+    top: 70px;
+    font-size: 2.5rem;
+    border-radius: 10px;
+    display: none;
+}
+.search-form-container form.active .autocom-box {
+    display: block;
+}
+
+.search-form-container form .autocom-box::-webkit-scrollbar {
+    width: 1.5rem;
+}
+
+.search-form-container form .autocom-box::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 20px 0px 0px 20px;
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.086);
+}
+
+.search-form-container form .autocom-box::-webkit-scrollbar-thumb {
+    background: var(--second-color);
+    border-radius: 5rem;
+}
+
+.search-form-container form .autocom-box li{
+    margin: 5px;
+    padding: 5px 15px 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.search-form-container form .autocom-box li:hover{
+    background-color: var(--main-color);
+    color: var(--third-color);
+}
+.search-form-container form .autocom-box li:hover:active{
+    background-color: var(--second-color);
+    color: var(--third-color);
+}
+
+/* search-form section ended */
+
 
 /* shopping-cart section started */
 
@@ -1694,7 +1747,7 @@ section {
     padding: 10px 0;
     position: relative;
     width: 15rem;
-
+    z-index: 2001;
 }
 
 .context-subMenu>a {

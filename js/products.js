@@ -441,3 +441,57 @@ function contextHandler(event) {
   window.addEventListener('keydown', keyDownHandler)
 
 /* custom contextMenu ended */
+
+
+/* autoComplete started */
+
+let searchingForm = $.querySelector("#search-form");
+let searchBoxInput = $.querySelector("#search-box");
+let autocomBox = $.querySelector(".autocom-box");
+
+function autoCompleteHandler() {
+  let searchBoxInputValue = searchBoxInput.value;
+
+  if (searchBoxInputValue) {
+    searchingForm.classList.add("active");
+
+    let suggestionWords = foodArray.filter(function (words) {
+      return words.title
+        .toLocaleLowerCase()
+        .includes(searchBoxInputValue.toLocaleLowerCase());
+    });
+
+    generateAutoCompWords(suggestionWords);
+  } else {
+    searchingForm.classList.remove("active");
+  }
+}
+
+function generateAutoCompWords(suggestionWords) {
+  let customList;
+
+  let suggestionWordsMap = suggestionWords.map(function (word) {
+    return `<a href="second-page.html?id=${word.id}" target="_blank"><li class="autocom-list">${word.title}</li></a>`;
+  });
+  if (!suggestionWordsMap.length) {
+    customList = `<a href="index.html" target="_blank"><li class="autocom-list">غذای مورد نظر شمارو نداریم...🫤</li></a>`;
+  } else {
+    customList = suggestionWordsMap.join("");
+  }
+  autocomBox.innerHTML = customList;
+  selectFromAutoComp();
+}
+
+function selectFromAutoComp() {
+  let newAutoCompLiElem = $.querySelectorAll(".autocom-list");
+  newAutoCompLiElem.forEach(function (words) {
+    words.addEventListener("click", function (event) {
+      searchBoxInput.value = event.target.innerHTML;
+      searchingForm.classList.remove("active");
+    });
+  });
+}
+
+searchBoxInput.addEventListener("keyup", autoCompleteHandler);
+
+/* autoComplete ended */

@@ -16,11 +16,10 @@
     <!-- cursor section started -->
 
     <div>
-      <img src="./img/cursor.png" class="cursor">
+      <img src="./img/cursor.png" class="cursor" />
     </div>
 
     <!-- cursor section ended -->
-
 
     <!-- loader section started -->
 
@@ -52,7 +51,7 @@
         <div id="menu-btn" class="fas fa-bars"></div>
         <div id="search-btn" class="fas fa-search"></div>
         <div id="cart-btn" class="fas fa-shopping-cart">
-          <span class="inner-cart-circle" >
+          <span class="inner-cart-circle">
             <span class="inner-cart-count">0</span>
           </span>
         </div>
@@ -68,14 +67,10 @@
     <!-- search form started -->
 
     <section class="search-form-container">
-      <form action="">
-        <input
-          type="search"
-          name=""
-          placeholder="دنبال چی می گردی؟"
-          id="search-box"
-        />
+      <form action="" id="search-form">
+        <input type="search" placeholder="دنبال چی می گردی؟" id="search-box"/>
         <label for="search-box" class="fas fa-search"></label>
+        <div class="autocom-box"></div>
       </form>
     </section>
 
@@ -87,17 +82,20 @@
       <div class="products-container">
         <h3 class="title">غذاهای شما</h3>
 
-        <div class="box-container" id="cart-container">
-          
-        </div>
+        <div class="box-container" id="cart-container"></div>
       </div>
 
-      <div class="cart-total" >
+      <div class="cart-total">
         <h3 class="title">مجموع خرید</h3>
 
         <div class="box">
-          <h3 class="subtotal">جمع قبل از کسر تخفیف : <span id="before-ِdiscount">0 تومان</span></h3>
-          <h3 class="subtotal">تخفیف : <span class="discount-price" id="ِdiscount-price">0 تومان</span></h3>
+          <h3 class="subtotal">
+            جمع قبل از کسر تخفیف : <span id="before-ِdiscount">0 تومان</span>
+          </h3>
+          <h3 class="subtotal">
+            تخفیف :
+            <span class="discount-price" id="ِdiscount-price">0 تومان</span>
+          </h3>
           <h3 class="total">جمع کل : <span id="total-price">0 تومان</span></h3>
 
           <a href="#" class="btn" id="payment-btn">پرداخت</a>
@@ -269,9 +267,7 @@
         <h3>منوی ویژه</h3>
       </div>
 
-      <div class="box-container" id="popular-container">
-        
-      </div>
+      <div class="box-container" id="popular-container"></div>
     </section>
 
     <!-- popular section ended -->
@@ -326,9 +322,7 @@
         <h3>منوی پیشنهادی</h3>
       </div>
 
-      <div class="box-container" id="menu-container">
-        
-      </div>
+      <div class="box-container" id="menu-container"></div>
     </section>
 
     <!-- menu section ended -->
@@ -631,9 +625,8 @@
     </div>
     <!-- scrollTop section ended-->
 
-
     <!-- custom contextMenu started-->
-    <div id="contextMenu" class="contextMenu" style="display: none;">
+    <div id="contextMenu" class="contextMenu" style="display: none">
       <ul class="contextMainMenu">
         <li class="context-subMenu"><a href="#home">خانه</a></li>
         <li class="context-subMenu"><a href="#about">درباره ما</a></li>
