@@ -12,6 +12,8 @@
 
 body {
     direction: rtl;
+    cursor: url('../img/cursor.png'), auto;
+
 }
 
 * {
@@ -26,7 +28,6 @@ body {
     text-transform: capitalize;
     -webkit-transition: .2s linear;
     transition: .2s linear;
-    cursor: none !important;
 }
 
 html {
@@ -118,19 +119,6 @@ html {
 
 /* loader section ended */
 
-/* cursor section started */
-
-.cursor {
-    z-index: 2000;
-    width: 25px;
-    height: 25px;
-    pointer-events: none;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    transition: none !important;
-}
-
-/* cursor section ended */
 
 .dark {
     background-color: var(--second-color) !important;
